@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kaffa Coffee Market</title>
+<meta name="description" content="Single-origin Ethiopian coffee from Kaffa, the forest where arabica began. Roasted every Tuesday and Friday and posted the next morning.">
+<meta name="theme-color" content="#2B1A12">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#shop">Skip to the shop</a>
+
+<!-- Ticker -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Roasted Tuesday &amp; Friday</span><i></i><span>Free shipping over $40</span><i></i><span>Grade 1 &amp; 2 arabica only</span><i></i><span>Wild forest coffee from Kaffa</span><i></i><span>Posted within 24 hours</span><i></i>
+    <span>Roasted Tuesday &amp; Friday</span><i></i><span>Free shipping over $40</span><i></i><span>Grade 1 &amp; 2 arabica only</span><i></i><span>Wild forest coffee from Kaffa</span><i></i><span>Posted within 24 hours</span><i></i>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-head" id="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#top" aria-label="Kaffa Coffee Market, back to top">
+      <img class="brand-mark" src="images/logo.svg" alt="" width="44" height="44">
+      <span class="brand-text">
+        <span class="brand-name display">Kaffa</span>
+        <span class="brand-sub mono">Coffee Market</span>
+      </span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="Sections">
+      <a href="#shop">Coffee</a>
+      <a href="#gear">Equipment</a>
+      <a href="#subscribe">Subscribe</a>
+      <a href="#brew">Brew guide</a>
+      <a href="#learn">Coffee school</a>
+      <a href="#faq">FAQ</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <button class="btn bag-btn" id="bag-open" type="button" aria-haspopup="dialog">
+      Bag <span class="bag-count" id="bag-count">0</span>
+    </button>
+    <button class="btn nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  </div>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero band" id="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="mono muted load" style="--n:0">Single-origin Ethiopian coffee, roasted to order</p>
+        <h1 class="display load" style="--n:1">Coffee from the forest where it <em>began</em>.</h1>
+        <p class="hero-lede load" style="--n:2">Arabica first grew wild in the cloud forests of Kaffa, in south-west Ethiopia. We buy small lots from that region and its neighbours, roast them twice a week, and post them the next morning.</p>
+        <div class="hero-actions load" style="--n:3">
+          <a class="btn btn-primary" href="#shop">Shop this week's lots</a>
+          <a class="btn" href="#gear">Browse equipment</a>
+        </div>
+        <ul class="hero-facts load" style="--n:4">
+          <li><strong><span data-count="9">9</span></strong><span class="mono muted">Lots on the table</span></li>
+          <li><strong><span data-count="2100">2,100</span> m</strong><span class="mono muted">Highest farm</span></li>
+          <li><strong><span data-count="24">24</span> h</strong><span class="mono muted">Roast to post</span></li>
+        </ul>
+      </div>
+
+      <figure class="hero-art load" style="--n:2">
+        <div class="stage" id="stage">
+          <div class="sack layer" style="--depth:-8">
+            <p class="sack-s">Produce of Ethiopia</p>
+            <p class="sack-xl">Kaffa</p>
+            <p class="sack-m">Coffee Market</p>
+            <span class="sack-rule"></span>
+            <p class="sack-s">Arabica · Grade 1 · Washed</p>
+            <p class="sack-ico">010 / 0274 / 0031</p>
+            <p class="sack-s">Net 60 kg</p>
+          </div>
+
+          <svg class="seal layer" style="--depth:18" viewBox="0 0 140 140" aria-hidden="true">
+            <circle class="seal-disc" cx="70" cy="70" r="70"/>
+            <defs><path id="seal-path" d="M70 70m-54 0a54 54 0 1 1 108 0a54 54 0 1 1-108 0"/></defs>
+            <g class="seal-ring">
+              <text class="seal-text"><textPath href="#seal-path" textLength="330">KAFFA COFFEE MARKET · WHERE COFFEE BEGAN ·</textPath></text>
+            </g>
+            <circle class="seal-inner" cx="70" cy="70" r="38"/>
+            <g transform="rotate(28 70 70)">
+              <ellipse class="seal-bean" cx="70" cy="70" rx="15" ry="23"/>
+              <path class="seal-crease" d="M70 49C61 62 79 78 70 91"/>
+            </g>
+          </svg>
+
+          <svg class="cup layer" style="--depth:14" viewBox="0 0 200 190" aria-hidden="true">
+            <path class="steam" style="--s:0" d="M74 62q-10-13 0-26q10-13 0-26"/>
+            <path class="steam" style="--s:1" d="M100 58q-10-13 0-26q10-13 0-26"/>
+            <path class="steam" style="--s:2" d="M126 62q-10-13 0-26q10-13 0-26"/>
+            <ellipse cx="100" cy="166" rx="84" ry="15" fill="#D9C4A0"/>
+            <ellipse cx="100" cy="163" rx="66" ry="10" fill="#F6EBD6"/>
+            <path d="M158 100c30-6 34 34-10 38" fill="none" stroke="#F6EBD6" stroke-width="11" stroke-linecap="round"/>
+            <path d="M40 88H160C160 132 140 160 100 160C60 160 40 132 40 88Z" fill="#F6EBD6"/>
+            <ellipse cx="100" cy="88" rx="60" ry="13" fill="#FFF8EA"/>
+            <ellipse cx="100" cy="89" rx="52" ry="9.5" fill="#3A2114"/>
+            <ellipse cx="88" cy="87" rx="20" ry="3" fill="#7A4A2A"/>
+            <g transform="rotate(28 100 126)"><ellipse cx="100" cy="126" rx="9" ry="14" fill="#B4281F"/><path d="M100 114C95 122 105 130 100 138" fill="none" stroke="#F6EBD6" stroke-width="2.2" stroke-linecap="round"/></g>
+          </svg>
+
+          <span class="bean layer" style="--depth:30; --x:-6%; --y:12%; --r:20deg; --t:6s"></span>
+          <span class="bean layer" style="--depth:22; --x:-9%; --y:62%; --r:-35deg; --t:7.5s"></span>
+          <span class="bean layer" style="--depth:34; --x:96%; --y:44%; --r:70deg; --t:5.5s"></span>
+          <span class="bean layer" style="--depth:26; --x:38%; --y:-9%; --r:110deg; --t:8s"></span>
+          <span class="bean layer" style="--depth:20; --x:20%; --y:101%; --r:-10deg; --t:6.5s"></span>
+        </div>
+        <figcaption>Every export sack carries a three-part mark: country, exporter, lot. 010 is Ethiopia's code. A full sack weighs 60 kg, enough for 240 of our 250 g bags before roasting.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Brand promises -->
+  <section class="promises">
+    <ul class="wrap promise-grid">
+      <li data-reveal style="--d:0">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><g transform="rotate(28 24 24)"><ellipse cx="24" cy="24" rx="12" ry="18"/><path d="M24 8C17 18 31 30 24 40"/></g></svg>
+        <div><strong>Grade 1 and 2 only</strong><span class="muted">Every lot is cupped before we buy it.</span></div>
+      </li>
+      <li data-reveal style="--d:1">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4c2 9 12 13 12 24a12 12 0 0 1-24 0c0-6 4-9 5-14c3 3 5 5 5 9c2-4 3-11 2-19z"/></svg>
+        <div><strong>Roasted twice a week</strong><span class="muted">Tuesday and Friday, in 12 kg batches.</span></div>
+      </li>
+      <li data-reveal style="--d:2">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 15l18-9 18 9v18l-18 9-18-9z"/><path d="M6 15l18 9 18-9M24 24v18M15 10.500l18 9"/></svg>
+        <div><strong>Posted within 24 hours</strong><span class="muted">The roast date is printed on every bag.</span></div>
+      </li>
+      <li data-reveal style="--d:3">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40C8 20 20 8 42 6C42 28 30 40 8 40z"/><path d="M8 40L30 18"/></svg>
+        <div><strong>Forest and smallholder lots</strong><span class="muted">Bought in small volumes, named by place.</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Shop -->
+  <section class="section" id="shop">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="mono muted">This week's lots</p>
+        <h2 class="display">The market table</h2>
+        <p>Every bag lists where the coffee grew, how it was processed and how it scored on the 100-point cupping scale. Whole bean, roasted on the next roast day after you order.</p>
+      </div>
+
+      <div class="toolbar" data-reveal>
+        <div class="chips" role="group" aria-label="Filter lots by type" id="chips">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">All lots</button>
+          <button class="chip" type="button" data-filter="single" aria-pressed="false">Single origin</button>
+          <button class="chip" type="button" data-filter="blend" aria-pressed="false">Blends</button>
+          <button class="chip" type="button" data-filter="decaf" aria-pressed="false">Decaf</button>
+        </div>
+        <label class="sr-only" for="lot-search">Search lots</label>
+        <input class="field" id="lot-search" type="search" placeholder="Search notes, region…" autocomplete="off">
+        <label class="sr-only" for="lot-sort">Sort lots</label>
+        <select class="field" id="lot-sort">
+          <option value="featured">Sort: featured</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+          <option value="score">Cup score: highest</option>
+          <option value="roast">Roast: lightest first</option>
+        </select>
+      </div>
+      <p class="result-count mono" id="result-count" aria-live="polite"></p>
+      <div class="lots" id="lots"></div>
+    </div>
+  </section>
+
+  <!-- Equipment -->
+  <section class="section section-alt" id="gear">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="mono muted">Equipment</p>
+        <h2 class="display">The gear shelf</h2>
+        <p>Everything between the bag and the cup: brewers, grinders, filters, kettles, scales, cups and the things that keep them clean. We use all of it at the stall, so ask us anything.</p>
+      </div>
+      <div class="toolbar" data-reveal>
+        <div class="chips" role="group" aria-label="Filter equipment by type" id="gear-chips"></div>
+        <label class="sr-only" for="gear-search">Search equipment</label>
+        <input class="field" id="gear-search" type="search" placeholder="Search equipment…" autocomplete="off">
+      </div>
+      <p class="result-count mono" id="gear-count" aria-live="polite"></p>
+      <div class="lots gear-grid" id="gear-grid"></div>
+    </div>
+  </section>
+
+  <!-- Subscriptions -->
+  <section class="section" id="subscribe">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="mono muted">Subscriptions</p>
+        <h2 class="display">Coffee on repeat</h2>
+        <p>Pick a plan and how often you want it. We roast your bags on the next roast day and post them the morning after. Skip, pause or cancel whenever you like.</p>
+      </div>
+      <div class="plans" id="plans"></div>
+    </div>
+  </section>
+
+  <!-- Origin -->
+  <section class="section section-alt" id="origin">
+    <div class="wrap origin-grid">
+      <div class="origin-main">
+        <figure class="origin-fig" data-reveal>
+          <img src="images/kaffa-forest.svg" alt="Illustration of the Kaffa highlands: forested hills, two round huts, rows of coffee shrubs and a branch of ripe coffee cherries." width="800" height="520" loading="lazy">
+        </figure>
+        <div class="origin-text" data-reveal>
+          <p class="mono muted">Origin</p>
+          <h2 class="display">Kaffa gave coffee its name</h2>
+          <p>Kaffa is a highland region around the town of Bonga. Coffea arabica still grows wild there under the forest canopy, and local families have picked it for centuries. In 2010 UNESCO listed the Kafa forest as a biosphere reserve to protect those wild trees.</p>
+          <p>Our stall is named for that place. About a third of what we sell comes from Kaffa itself. The rest comes from Yirgacheffe, Guji, Sidama, Limu and Harrar, each with its own character in the cup.</p>
+          <p>Ethiopian coffee is graded 1 to 5 by defect count and cup quality. We buy Grade 1 and Grade 2 only.</p>
+        </div>
+      </div>
+      <div class="origin-side">
+        <p class="mono muted">From tree to your door</p>
+        <ol class="steps" id="steps">
+          <li data-reveal><h3>Picked by hand</h3><p>The main harvest runs from October to January. Pickers take only red, ripe cherries and return to each tree several times.</p></li>
+          <li data-reveal><h3>Washed or sun-dried</h3><p>Washed lots are pulped and fermented in water. Natural lots dry whole on raised beds for two to four weeks.</p></li>
+          <li data-reveal><h3>Milled and graded</h3><p>The dry husk comes off, beans are sorted by size and density, and each lot is cupped and graded.</p></li>
+          <li data-reveal><h3>Roasted in small batches</h3><p>We roast on Tuesday and Friday, in batches of 12 kg, and print the roast date on every bag.</p></li>
+          <li data-reveal><h3>Posted the next morning</h3><p>Bags leave within 24 hours of roasting. Most coffees taste best 7 to 30 days after the roast date.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coffee ceremony -->
+  <section class="section band" id="ceremony">
+    <div class="wrap ceremony-grid">
+      <img class="ceremony-img" src="images/brew/jebena.svg" alt="Illustration of a black clay jebena coffee pot beside a small handleless cup." width="240" height="240" loading="lazy" data-reveal>
+      <div class="ceremony-text" data-reveal>
+        <p class="mono muted">The coffee ceremony</p>
+        <h2 class="display">Three cups, never one</h2>
+        <p>In Ethiopia coffee is made in front of the guests. Green beans are washed and roasted in a flat pan over coals, and the pan is carried round so everyone can smell the smoke. The beans are pounded in a mortar and boiled in a jebena, a clay pot with a round base and a narrow neck.</p>
+        <p>Frankincense burns alongside, and popcorn or roasted barley is passed round. The same grounds are brewed three times and poured from a height into small cups called sini. Leaving before the third cup is considered impolite.</p>
+      </div>
+      <ol class="rounds">
+        <li data-reveal style="--d:0"><span class="mono muted">First cup</span><strong class="display">Abol</strong><p>The strongest round. The eldest guest is served first.</p></li>
+        <li data-reveal style="--d:1"><span class="mono muted">Second cup</span><strong class="display">Tona</strong><p>Water goes back onto the same grounds. Lighter, and the talk gets going.</p></li>
+        <li data-reveal style="--d:2"><span class="mono muted">Third cup</span><strong class="display">Baraka</strong><p>The mildest round. The name means blessing.</p></li>
+      </ol>
+      <p class="ceremony-note muted">We hold a ceremony at the stall every Sunday at 11:00. Pull up a stool.</p>
+    </div>
+  </section>
+
+  <!-- Brew guide -->
+  <section class="section" id="brew">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="mono muted">Brew guide</p>
+        <h2 class="display">Weigh it, don't guess</h2>
+        <p>Pick a method and how many you're serving. The recipe gives you the dose, the water and a timer.</p>
+      </div>
+      <div class="brew">
+        <div class="brew-controls" data-reveal>
+          <fieldset>
+            <legend>Method</legend>
+            <div class="methods" id="methods"></div>
+          </fieldset>
+          <div>
+            <label class="label" for="brew-servings" id="servings-label">Servings</label>
+            <div class="servings-row">
+              <input id="brew-servings" type="range" min="1" max="6" step="1" value="2">
+              <output class="servings-val" id="servings-val" for="brew-servings">2</output>
+            </div>
+          </div>
+          <p class="muted" id="brew-pair"></p>
+        </div>
+
+        <div class="recipe" id="recipe" data-reveal style="--d:1">
+          <div class="recipe-top">
+            <img class="recipe-img" id="brew-img" src="images/brew/pourover.svg" alt="" width="240" height="240">
+            <div class="recipe-main">
+              <div class="recipe-head">
+                <h3 class="display" id="brew-name">Pour-over</h3>
+                <span class="mono muted" id="brew-ratio">Ratio 1 : 16</span>
+              </div>
+              <div class="doses">
+                <div><div class="mono muted">Coffee</div><div class="dose-num"><span id="dose-coffee">31</span><small>g</small></div></div>
+                <div><div class="mono muted" id="dose-water-label">Water</div><div class="dose-num"><span id="dose-water">500</span><small id="dose-water-unit">ml</small></div></div>
+              </div>
+            </div>
+          </div>
+          <dl class="recipe-specs">
+            <div><dt class="mono">Grind</dt><dd id="brew-grind">Medium-fine, like table salt</dd></div>
+            <div><dt class="mono">Water temp</dt><dd id="brew-temp">94 °C</dd></div>
+            <div><dt class="mono">Brew time</dt><dd id="brew-time">3:00</dd></div>
+          </dl>
+          <div class="recipe-bottom">
+            <ol class="recipe-steps" id="brew-steps"></ol>
+            <div class="timer" id="timer">
+              <div class="timer-dial">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <circle class="ring-track" cx="60" cy="60" r="52"/>
+                  <circle class="ring-fill" id="timer-ring" cx="60" cy="60" r="52" transform="rotate(-90 60 60)"/>
+                </svg>
+                <output class="timer-time" id="timer-time" aria-label="Time left">3:00</output>
+              </div>
+              <div class="timer-btns">
+                <button class="btn btn-primary" type="button" id="timer-toggle">Start timer</button>
+                <button class="btn" type="button" id="timer-reset">Reset</button>
+              </div>
+            </div>
+            <p class="timer-note muted" id="timer-note" hidden></p>
+          </div>
+          <p class="sr-only" id="brew-summary" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="subhead" data-reveal>
+        <h3 class="display">Grind size</h3>
+        <p class="muted">The grind for the method you picked is marked. Finer grinds give up their flavour faster, so they go with shorter brews.</p>
+      </div>
+      <ol class="grind-scale" id="grind-scale">
+        <li data-grind="0" style="--s:.2rem" data-reveal><span class="grind-dots"></span><strong>Extra fine</strong><span class="muted">Like flour · about 100 µm</span><span class="grind-for">Cezve</span></li>
+        <li data-grind="1" style="--s:.3rem" data-reveal><span class="grind-dots"></span><strong>Fine</strong><span class="muted">Like caster sugar · about 300 µm</span><span class="grind-for">Espresso, moka pot, jebena</span></li>
+        <li data-grind="2" style="--s:.44rem" data-reveal><span class="grind-dots"></span><strong>Medium-fine</strong><span class="muted">Like table salt · about 500 µm</span><span class="grind-for">Cone dripper, AeroPress</span></li>
+        <li data-grind="3" style="--s:.6rem" data-reveal><span class="grind-dots"></span><strong>Medium</strong><span class="muted">Like sand · about 700 µm</span><span class="grind-for">Flat-bottom dripper, batch brewer</span></li>
+        <li data-grind="4" style="--s:.78rem" data-reveal><span class="grind-dots"></span><strong>Medium-coarse</strong><span class="muted">Like rough sand · about 900 µm</span><span class="grind-for">Hourglass brewer</span></li>
+        <li data-grind="5" style="--s:1rem" data-reveal><span class="grind-dots"></span><strong>Coarse</strong><span class="muted">Like sea salt · about 1,200 µm</span><span class="grind-for">French press, cold brew</span></li>
+      </ol>
+
+      <div class="subhead" data-reveal>
+        <h3 class="display">Four numbers that decide the cup</h3>
+      </div>
+      <ul class="basics">
+        <li data-reveal style="--d:0"><strong class="display">60 g/L</strong><span class="mono muted">Ratio</span><p>Start near 60 g of coffee per litre of water, which is 1 : 16 to 1 : 17. The Specialty Coffee Association's reference is 55 g per litre, give or take 10%.</p></li>
+        <li data-reveal style="--d:1"><strong class="display">90–96 °C</strong><span class="mono muted">Water temperature</span><p>For filter coffee. Go hotter for light roasts and cooler for dark ones. A kettle left for 30 seconds off the boil is about right.</p></li>
+        <li data-reveal style="--d:2"><strong class="display">18–22%</strong><span class="mono muted">Extraction</span><p>The share of the ground coffee that should end up dissolved in the cup. Less tastes sour and thin. More tastes bitter and dry.</p></li>
+        <li data-reveal style="--d:3"><strong class="display">150 mg/L</strong><span class="mono muted">Minerals in the water</span><p>Very soft water tastes flat. Very hard water mutes the acidity and scales your kettle. A jug filter gets most tap water close.</p></li>
+      </ul>
+
+      <div class="subhead" data-reveal>
+        <h3 class="display">Fix your cup</h3>
+        <p class="muted">Pick what's wrong. Change one thing at a time and taste again.</p>
+      </div>
+      <div class="fix" data-reveal>
+        <div class="chips" role="group" aria-label="What is wrong with the cup" id="fix-chips"></div>
+        <div class="fix-panel" id="fix-panel" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coffee school -->
+  <section class="section section-alt" id="learn">
+    <div class="wrap learn">
+      <div class="section-head" data-reveal>
+        <p class="mono muted">Coffee school</p>
+        <h2 class="display">From the tree to the cup</h2>
+        <p>Short, practical notes on where coffee comes from, what happens to it on the way, and how to choose and look after your kit.</p>
+      </div>
+      <nav class="chips learn-nav" aria-label="Coffee school topics" data-reveal>
+        <a class="chip" href="#regions">Regions</a>
+        <a class="chip" href="#processing">Processing</a>
+        <a class="chip" href="#roasts">Roast levels</a>
+        <a class="chip" href="#filters">Filters</a>
+        <a class="chip" href="#brewers">Choosing a brewer</a>
+        <a class="chip" href="#care">Storage and care</a>
+        <a class="chip" href="#glossary">Glossary</a>
+      </nav>
+
+      <article class="topic" id="regions">
+        <div class="subhead" data-reveal>
+          <h3 class="display">Six regions, six cups</h3>
+          <p class="muted">Every coffee we sell comes from one of these six Ethiopian regions.</p>
+        </div>
+        <div class="table-wrap" data-reveal>
+          <table>
+            <thead><tr><th>Region</th><th>Where</th><th>Usual process</th><th>In the cup</th><th>Our lot</th></tr></thead>
+            <tbody>
+              <tr><th>Kaffa</th><td>South-west, around Bonga</td><td>Natural, forest-grown</td><td>Dark berries, cocoa, spice</td><td>Bonga Forest, 1,750 m</td></tr>
+              <tr><th>Yirgacheffe</th><td>South, in the Gedeo zone</td><td>Washed</td><td>Jasmine, citrus, tea-like</td><td>Kochere, 2,000 m</td></tr>
+              <tr><th>Guji</th><td>South, east of Yirgacheffe</td><td>Natural and washed</td><td>Stone fruit, strawberry, sweet</td><td>Shakiso, 2,100 m</td></tr>
+              <tr><th>Sidama</th><td>South, around Hawassa</td><td>Washed and honey</td><td>Citrus, honey, balanced</td><td>Bensa, 2,050 m</td></tr>
+              <tr><th>Limu</th><td>South-west, north of Jimma</td><td>Washed</td><td>Sweet, spicy, gentle acidity</td><td>Limu Kossa, 1,850 m</td></tr>
+              <tr><th>Harrar</th><td>Eastern highlands</td><td>Natural</td><td>Blackberry, wine, heavy body</td><td>Longberry, 1,900 m</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="topic" id="processing">
+        <div class="subhead" data-reveal>
+          <h3 class="display">Processing</h3>
+          <p class="muted">How the fruit comes off the bean changes the taste as much as where it grew.</p>
+        </div>
+        <ul class="cards">
+          <li class="card" data-reveal style="--d:0"><h4>Washed</h4><p>The skin and pulp are stripped off within hours of picking. The beans ferment in water for 24 to 72 hours to loosen the sticky layer, then are washed clean and dried for one to two weeks.</p><p class="card-foot"><span class="mono muted">Tastes</span> Clean, bright, floral</p></li>
+          <li class="card" data-reveal style="--d:1"><h4>Natural</h4><p>Whole cherries are spread on raised beds and turned by hand for two to four weeks until they dry like raisins. The dried fruit is hulled off afterwards.</p><p class="card-foot"><span class="mono muted">Tastes</span> Fruity, sweet, heavy</p></li>
+          <li class="card" data-reveal style="--d:2"><h4>Honey</h4><p>The skin comes off but some of the sticky fruit layer stays on while the beans dry. The more fruit left on, the more sweetness and body in the cup.</p><p class="card-foot"><span class="mono muted">Tastes</span> Syrupy, rounded</p></li>
+          <li class="card" data-reveal style="--d:3"><h4>Water decaf</h4><p>Green beans are soaked in hot water and the caffeine is filtered out through carbon. No solvents are used, and at least 97% of the caffeine is removed.</p><p class="card-foot"><span class="mono muted">Tastes</span> Softer, less acidity</p></li>
+        </ul>
+      </article>
+
+      <article class="topic" id="roasts">
+        <div class="subhead" data-reveal>
+          <h3 class="display">Roast levels</h3>
+          <p class="muted">The five steps on our roast scale. Temperatures are the approximate bean temperature when the roast ends.</p>
+        </div>
+        <ol class="roasts">
+          <li data-reveal style="--d:0; --c: var(--roast-1)"><span class="roast-bean"></span><h4>1 · Light</h4><span class="mono muted">About 205 °C</span><p>Light brown and dry. Bright acidity, flowers and tea.</p><p class="card-foot"><span class="mono muted">Brew</span> Pour-over</p></li>
+          <li data-reveal style="--d:1; --c: var(--roast-2)"><span class="roast-bean"></span><h4>2 · Light-medium</h4><span class="mono muted">About 210 °C</span><p>More sweetness with the fruit still clear.</p><p class="card-foot"><span class="mono muted">Brew</span> Pour-over, AeroPress</p></li>
+          <li data-reveal style="--d:2; --c: var(--roast-3)"><span class="roast-bean"></span><h4>3 · Medium</h4><span class="mono muted">About 219 °C</span><p>Balanced. Caramel and nuts alongside the origin character.</p><p class="card-foot"><span class="mono muted">Brew</span> Anything</p></li>
+          <li data-reveal style="--d:3; --c: var(--roast-4)"><span class="roast-bean"></span><h4>4 · Medium-dark</h4><span class="mono muted">About 228 °C</span><p>A slight sheen of oil. Cocoa, low acidity, fuller body.</p><p class="card-foot"><span class="mono muted">Brew</span> Espresso, moka pot</p></li>
+          <li data-reveal style="--d:4; --c: var(--roast-5)"><span class="roast-bean"></span><h4>5 · Dark</h4><span class="mono muted">About 240 °C</span><p>Oily and nearly black. Smoky, bittersweet, heavy.</p><p class="card-foot"><span class="mono muted">Brew</span> Jebena, French press, with milk</p></li>
+        </ol>
+      </article>
+
+      <article class="topic" id="filters">
+        <div class="subhead" data-reveal>
+          <h3 class="display">Paper, metal or cloth</h3>
+          <p class="muted">The filter decides how much oil and fine sediment reaches the cup.</p>
+        </div>
+        <div class="table-wrap" data-reveal>
+          <table>
+            <thead><tr><th>Filter</th><th>Body</th><th>Clarity</th><th>Coffee oils</th><th>Cleaning</th><th>Lasts</th></tr></thead>
+            <tbody>
+              <tr><th>White paper</th><td>Light</td><td>Very clean</td><td>Almost all trapped</td><td>Compost it</td><td>One brew</td></tr>
+              <tr><th>Natural paper</th><td>Light</td><td>Clean</td><td>Almost all trapped</td><td>Compost it. Rinse well first to lose the papery taste</td><td>One brew</td></tr>
+              <tr><th>Thick bonded paper</th><td>Lightest</td><td>Cleanest</td><td>All trapped</td><td>Compost it</td><td>One brew</td></tr>
+              <tr><th>Metal mesh</th><td>Full</td><td>Some fine sediment</td><td>Pass through</td><td>Rinse and brush. Soak monthly</td><td>Years</td></tr>
+              <tr><th>Cloth</th><td>Silky, medium</td><td>Clean</td><td>Some pass through</td><td>Rinse, keep wet in the fridge, boil monthly</td><td>About 100 brews</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="subhead subhead-small" data-reveal><h4>Which size fits</h4></div>
+        <ul class="sizes-chart">
+          <li data-reveal><strong>Cone 01</strong><span class="muted">1 to 2 cups</span></li>
+          <li data-reveal><strong>Cone 02</strong><span class="muted">1 to 4 cups. Fits our Cone Dripper 02</span></li>
+          <li data-reveal><strong>Cone 03</strong><span class="muted">3 to 6 cups</span></li>
+          <li data-reveal><strong>Wave 155</strong><span class="muted">1 to 2 cups</span></li>
+          <li data-reveal><strong>Wave 185</strong><span class="muted">2 to 4 cups. Fits our Flat-bottom Dripper</span></li>
+          <li data-reveal><strong>Basket</strong><span class="muted">8 to 12 cup batch brewers</span></li>
+          <li data-reveal><strong>Disc 63 mm</strong><span class="muted">Travel press brewer</span></li>
+          <li data-reveal><strong>Hourglass square</strong><span class="muted">Hourglass brewers, 3 to 8 cups</span></li>
+        </ul>
+      </article>
+
+      <article class="topic" id="brewers">
+        <div class="subhead" data-reveal>
+          <h3 class="display">Choosing a brewer</h3>
+          <p class="muted">Eleven ways to make coffee, compared on what matters day to day.</p>
+        </div>
+        <div class="table-wrap" data-reveal>
+          <table>
+            <thead><tr><th>Brewer</th><th>Cup</th><th>Brew time</th><th>Grind</th><th>Effort</th><th>Good for</th></tr></thead>
+            <tbody>
+              <tr><th>Cone dripper</th><td>Light and clear</td><td>3 min</td><td>Medium-fine</td><td>Takes practice and a gooseneck kettle</td><td>Tasting single origins</td></tr>
+              <tr><th>Flat-bottom dripper</th><td>Light and sweet</td><td>3 min 30</td><td>Medium</td><td>Forgiving</td><td>The same good cup every day</td></tr>
+              <tr><th>Hourglass brewer</th><td>Lightest, tea-like</td><td>4 min 30</td><td>Medium-coarse</td><td>Moderate</td><td>Sharing two to four cups</td></tr>
+              <tr><th>French press</th><td>Heavy and rich</td><td>4 min</td><td>Coarse</td><td>Easy</td><td>Body, and no paper to buy</td></tr>
+              <tr><th>Travel press</th><td>Medium, clean</td><td>2 min</td><td>Medium-fine</td><td>Easy</td><td>One cup, anywhere</td></tr>
+              <tr><th>Moka pot</th><td>Strong and dense</td><td>4 min</td><td>Fine</td><td>Watch the heat</td><td>Espresso-style without a machine</td></tr>
+              <tr><th>Espresso machine</th><td>Syrupy, with crema</td><td>25 to 30 s</td><td>Fine</td><td>Steep learning curve</td><td>Milk drinks</td></tr>
+              <tr><th>Cold brew jar</th><td>Smooth, low acidity</td><td>16 hours</td><td>Coarse</td><td>Easy but slow</td><td>Iced coffee all week</td></tr>
+              <tr><th>Jebena</th><td>Heavy and rustic</td><td>8 min</td><td>Fine</td><td>A ritual</td><td>Guests and long afternoons</td></tr>
+              <tr><th>Cezve</th><td>Thick, unfiltered</td><td>2 min 30</td><td>Extra fine</td><td>Needs your full attention</td><td>Small, strong cups</td></tr>
+              <tr><th>Batch brewer</th><td>Medium</td><td>5 min</td><td>Medium</td><td>Press a button</td><td>A full pot for the table</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="topic" id="care">
+        <div class="subhead" data-reveal>
+          <h3 class="display">Storage and care</h3>
+        </div>
+        <div class="two-col">
+          <div class="card" data-reveal style="--d:0">
+            <h4>Keeping coffee fresh</h4>
+            <ul class="ticks">
+              <li>Keep beans in their bag or an airtight canister, away from light, heat and the oven.</li>
+              <li>Buy whole bean and grind just before you brew. Ground coffee fades within a day or two.</li>
+              <li>Drink it between 7 and 30 days after the roast date. Espresso likes at least 10 days of rest.</li>
+              <li>Keep the bag you're using out of the fridge. It picks up moisture and smells.</li>
+              <li>To keep coffee longer than a month, freeze it in airtight single-brew portions and grind from frozen.</li>
+            </ul>
+          </div>
+          <div class="card" data-reveal style="--d:1">
+            <h4>Cleaning your kit</h4>
+            <ul class="ticks">
+              <li><strong>Every brew:</strong> rinse the brewer with hot water. Old coffee oil turns rancid.</li>
+              <li><strong>Weekly:</strong> wash brewers and servers with unscented soap, and brush out the grinder burrs.</li>
+              <li><strong>Monthly:</strong> soak metal filters and press meshes. Boil cloth filters for five minutes.</li>
+              <li><strong>Every 1 to 3 months:</strong> descale kettles and machines. Hard water needs it monthly.</li>
+              <li><strong>Jebena:</strong> never use soap on unglazed clay. Rinse with hot water and dry it upside down.</li>
+              <li><strong>Moka pot:</strong> rinse, dry, and replace the rubber gasket about once a year.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="topic" id="glossary">
+        <div class="subhead" data-reveal>
+          <h3 class="display">Glossary</h3>
+        </div>
+        <dl class="glossary" data-reveal>
+          <div><dt>Arabica</dt><dd>The species Coffea arabica. Sweeter and more aromatic than robusta, with about half the caffeine.</dd></div>
+          <div><dt>Bloom</dt><dd>The first pour that wets the grounds and lets trapped gas escape. Wait 30 to 45 seconds before pouring on.</dd></div>
+          <div><dt>Burr grinder</dt><dd>Crushes beans between two cutting rings for even particles. Blade grinders chop unevenly.</dd></div>
+          <div><dt>Channeling</dt><dd>Water finding a fast path through an espresso puck, leaving the rest under-extracted.</dd></div>
+          <div><dt>Crema</dt><dd>The tan foam on top of an espresso, made of coffee oils and gas.</dd></div>
+          <div><dt>Cupping</dt><dd>The standard way to taste coffee: coarse grounds steeped in a bowl, tasted from a spoon and scored out of 100.</dd></div>
+          <div><dt>Degassing</dt><dd>Fresh beans release carbon dioxide for days after roasting, which is why bags have a one-way valve.</dd></div>
+          <div><dt>Dose</dt><dd>The weight of dry coffee you brew with.</dd></div>
+          <div><dt>Extraction</dt><dd>How much of the coffee dissolves into the water. The target is 18 to 22%.</dd></div>
+          <div><dt>First crack</dt><dd>The popping sound at about 196 °C when the beans expand and a light roast begins.</dd></div>
+          <div><dt>Grade 1</dt><dd>Ethiopia's top export grade: no more than three defects in a 300 g sample.</dd></div>
+          <div><dt>Heirloom</dt><dd>The catch-all name for Ethiopia's thousands of local arabica varieties.</dd></div>
+          <div><dt>Peaberry</dt><dd>A cherry that grew one round bean instead of two flat ones.</dd></div>
+          <div><dt>Ratio</dt><dd>Coffee to water by weight. 1 : 16 means 1 g of coffee for every 16 g of water.</dd></div>
+          <div><dt>Single origin</dt><dd>Coffee from one farm, washing station or region, not blended.</dd></div>
+          <div><dt>Specialty coffee</dt><dd>Coffee that scores 80 points or more on the 100-point cupping scale.</dd></div>
+          <div><dt>Tamping</dt><dd>Pressing espresso grounds into a level puck so the water passes through evenly.</dd></div>
+          <div><dt>TDS</dt><dd>Total dissolved solids. It measures both how mineral your water is and how strong your brew is.</dd></div>
+          <div><dt>Washing station</dt><dd>The mill where smallholders deliver cherries to be pulped, fermented and dried.</dd></div>
+          <div><dt>Yield</dt><dd>The weight of liquid coffee in the cup. In espresso it is usually twice the dose.</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <!-- Workshops -->
+  <section class="section" id="workshops">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="mono muted">Workshops</p>
+        <h2 class="display">Learn at the stall</h2>
+        <p>Six places per class. Book at the stall or by email.</p>
+      </div>
+      <ul class="cards classes">
+        <li class="card" data-reveal style="--d:0"><span class="mono muted">Sundays · 11:00 · 1 hour</span><h4>Coffee ceremony</h4><p>Roasted, pounded and brewed in the jebena in front of you. Three rounds, with popcorn.</p><p class="card-foot"><strong>Free</strong></p></li>
+        <li class="card" data-reveal style="--d:1"><span class="mono muted">Saturdays · 10:00 · 45 min</span><h4>Cupping table</h4><p>Taste the week's lots side by side the way buyers do: same dose, same water, a spoon and a score sheet.</p><p class="card-foot"><strong>$10</strong></p></li>
+        <li class="card" data-reveal style="--d:2"><span class="mono muted">First Saturday · 14:00 · 90 min</span><h4>Pour-over basics</h4><p>Ratio, grind, bloom and pouring. You brew three cups and take home a 250 g bag.</p><p class="card-foot"><strong>$35</strong></p></li>
+        <li class="card" data-reveal style="--d:3"><span class="mono muted">Third Saturday · 14:00 · 2 hours</span><h4>Espresso and milk</h4><p>Dialling in a shot, steaming milk and pouring your first heart.</p><p class="card-foot"><strong>$55</strong></p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-alt" id="faq">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="mono muted">Questions</p>
+        <h2 class="display">Asked at the counter</h2>
+      </div>
+      <div class="faq" data-reveal>
+        <details><summary>Do you grind the coffee?</summary><div><p>Online orders ship as whole beans because ground coffee goes stale within days. At the stall we grind on request. Tell us which brewer you use.</p></div></details>
+        <details><summary>When will my order ship?</summary><div><p>We roast on Tuesday and Friday. Orders placed by midnight the day before are roasted that day and posted the next morning. Equipment-only orders ship the next working day.</p></div></details>
+        <details><summary>How much is shipping?</summary><div><p>$5 flat. Orders of $40 or more ship free.</p></div></details>
+        <details><summary>How long does coffee stay fresh?</summary><div><p>It tastes best between 7 and 30 days after the roast date printed on the bag. An unopened bag is still good for about three months, only less lively. Once ground, use it within a day or two.</p></div></details>
+        <details><summary>Which filter fits my dripper?</summary><div><p>Cone 02 papers fit the Cone Dripper 02 and the stainless cone filter. Wave 185 papers fit the Flat-bottom Dripper. The <a href="#filters">filter size chart</a> covers the rest.</p></div></details>
+        <details><summary>Does dark roast have more caffeine than light?</summary><div><p>By weight they are about the same. Dark beans are less dense, so a scoop of dark roast holds slightly less coffee. Weigh your dose and the difference disappears.</p></div></details>
+        <details><summary>How is the decaf made?</summary><div><p>With water and carbon filters, without solvents. At least 97% of the caffeine is removed.</p></div></details>
+        <details><summary>Can I change or cancel a subscription?</summary><div><p>Yes. Skip a delivery, change the plan or cancel at any time before the roast day by writing to us.</p></div></details>
+        <details><summary>Can I return something?</summary><div><p>Unused equipment can come back within 30 days. Coffee is roasted to order, so we can't take it back, but if a bag arrives damaged or tastes wrong we replace it.</p></div></details>
+        <details><summary>Do you sell wholesale?</summary><div><p>Yes, to cafés, shops and offices from 5 kg a month. Write to us and we'll send samples.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit -->
+  <section class="section" id="visit">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="mono muted">Visit</p>
+        <h2 class="display">Find the stall</h2>
+      </div>
+      <div class="visit-grid">
+        <div data-reveal style="--d:0">
+          <h3>Where</h3>
+          <p>Stall 7, Old Market Hall<br>Walk in through the east gate and follow the smell.</p>
+        </div>
+        <div data-reveal style="--d:1">
+          <h3>Opening hours</h3>
+          <dl class="hours">
+            <dt>Tue to Sat</dt><dd>8:00 – 18:00</dd>
+            <dt>Sunday</dt><dd>9:00 – 14:00</dd>
+            <dt>Monday</dt><dd>Closed</dd>
+          </dl>
+        </div>
+        <div data-reveal style="--d:2">
+          <h3>Write to us</h3>
+          <div class="email-row">
+            <span class="email" id="email">hello@kaffa-coffee.example</span>
+            <button class="btn btn-small" type="button" id="copy-email">Copy</button>
+          </div>
+          <p class="muted">Wholesale and office orders welcome.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-foot band">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <img src="images/logo.svg" alt="" width="64" height="64">
+      <div>
+        <p class="foot-word display">Kaffa</p>
+        <p class="mono muted">Coffee Market · Where coffee began</p>
+      </div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <div><p class="mono muted">Shop</p><a href="#shop">Coffee</a><a href="#gear">Equipment</a><a href="#subscribe">Subscriptions</a></div>
+      <div><p class="mono muted">Learn</p><a href="#brew">Brew guide</a><a href="#learn">Coffee school</a><a href="#faq">FAQ</a></div>
+      <div><p class="mono muted">Stall</p><a href="#origin">Origin</a><a href="#workshops">Workshops</a><a href="#visit">Visit</a></div>
+    </nav>
+    <p class="foot-note muted">© 2026 Kaffa Coffee Market. Whole bean only. We grind at the stall on request.</p>
+  </div>
+</footer>
+
+<!-- Bag drawer -->
+<dialog class="cart" id="cart" aria-labelledby="cart-title">
+  <div class="cart-inner">
+    <div class="cart-head">
+      <h2 class="display" id="cart-title">Your bag</h2>
+      <button class="btn btn-small" type="button" id="bag-close">Close</button>
+    </div>
+    <div class="cart-lines" id="cart-lines"></div>
+    <div class="cart-foot" id="cart-foot"></div>
+  </div>
+</dialog>
+
+<div class="toast band" id="toast" role="status" hidden>
+  <span id="toast-msg"></span>
+  <button class="link-btn" type="button" id="toast-view">View bag</button>
+</div>
+</body>
+</html>
