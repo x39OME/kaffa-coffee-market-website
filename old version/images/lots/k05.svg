@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Bag of Longberry coffee">
+<rect width="400" height="300" fill="#E9D3E0"/>
+<circle cx="200" cy="148" r="118" fill="#D8B3CB"/>
+<ellipse cx="200" cy="266" rx="104" ry="11" fill="#2B1A12" opacity=".2"/>
+<path d="M130 82H270L282 258Q282 264 276 264H124Q118 264 118 258Z" fill="#C9A26B"/>
+<path d="M250 82H270L282 258Q282 264 276 264H260Z" fill="#B48B55"/>
+<path d="M130 82H150L138 264H124Q118 264 118 258Z" fill="#D6B37F"/>
+<rect x="126" y="56" width="148" height="28" rx="3" fill="#B48B55"/>
+<rect x="116" y="65" width="168" height="9" rx="4.5" fill="#2B1A12"/>
+<circle cx="200" cy="101" r="5" fill="#B48B55"/><circle cx="200" cy="101" r="2" fill="#2B1A12" opacity=".5"/>
+<rect x="146" y="116" width="108" height="118" fill="#6B2D5C"/>
+<rect x="152" y="122" width="96" height="106" fill="none" stroke="#F6EBD6" stroke-width="1.5" stroke-dasharray="7 3"/>
+<g transform="rotate(28 200.0 146.0)"><ellipse cx="200.0" cy="146.0" rx="8.6" ry="13.0" fill="#F6EBD6"/><path d="M200.0 134.3C194.8 142.1 205.2 149.9 200.0 157.7" fill="none" stroke="#6B2D5C" stroke-width="2.1" stroke-linecap="round"/></g>
+<g fill="#F6EBD6" font-family="'Courier New', Courier, monospace" text-anchor="middle"><text x="200" y="184" font-size="15.0" font-weight="700" letter-spacing="1">LONGBERRY</text>
+<text x="200" y="208" font-size="9.5" letter-spacing="1.5">HARRAR</text>
+<text x="200" y="222" font-size="8" letter-spacing="2" opacity=".8">250 G · WHOLE BEAN</text></g>
+<g transform="rotate(32 68.9 250.3)"><ellipse cx="68.9" cy="250.3" rx="9.0" ry="13.6" fill="#6F4324"/><path d="M68.9 238.1C63.5 246.3 74.3 254.4 68.9 262.6" fill="none" stroke="#1C0F08" stroke-width="2.2" stroke-linecap="round"/></g><g transform="rotate(2 94.7 258.2)"><ellipse cx="94.7" cy="258.2" rx="7.5" ry="11.3" fill="#6F4324"/><path d="M94.7 248.0C90.2 254.8 99.2 261.6 94.7 268.4" fill="none" stroke="#1C0F08" stroke-width="1.8" stroke-linecap="round"/></g><g transform="rotate(125 47.9 268.1)"><ellipse cx="47.9" cy="268.1" rx="9.2" ry="14.0" fill="#6F4324"/><path d="M47.9 255.5C42.3 263.9 53.5 272.3 47.9 280.7" fill="none" stroke="#1C0F08" stroke-width="2.2" stroke-linecap="round"/></g><g transform="rotate(59 304.5 257.2)"><ellipse cx="304.5" cy="257.2" rx="8.6" ry="13.1" fill="#6F4324"/><path d="M304.5 245.5C299.3 253.3 309.8 261.2 304.5 269.0" fill="none" stroke="#1C0F08" stroke-width="2.1" stroke-linecap="round"/></g><g transform="rotate(20 328.9 250.7)"><ellipse cx="328.9" cy="250.7" rx="8.5" ry="12.9" fill="#6F4324"/><path d="M328.9 239.2C323.7 246.9 334.0 254.6 328.9 262.3" fill="none" stroke="#1C0F08" stroke-width="2.1" stroke-linecap="round"/></g><g transform="rotate(19 340.8 266.8)"><ellipse cx="340.8" cy="266.8" rx="9.2" ry="13.9" fill="#6F4324"/><path d="M340.8 254.3C335.3 262.6 346.4 270.9 340.8 279.2" fill="none" stroke="#1C0F08" stroke-width="2.2" stroke-linecap="round"/></g><g transform="rotate(69 291.5 275.8)"><ellipse cx="291.5" cy="275.8" rx="7.3" ry="11.1" fill="#6F4324"/><path d="M291.5 265.8C287.1 272.4 295.9 279.1 291.5 285.8" fill="none" stroke="#1C0F08" stroke-width="1.8" stroke-linecap="round"/></g>
+</svg>

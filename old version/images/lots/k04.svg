@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Bag of Bensa coffee">
+<rect width="400" height="300" fill="#F3E1B8"/>
+<circle cx="200" cy="148" r="118" fill="#E9CB8B"/>
+<ellipse cx="200" cy="266" rx="104" ry="11" fill="#2B1A12" opacity=".2"/>
+<path d="M130 82H270L282 258Q282 264 276 264H124Q118 264 118 258Z" fill="#C9A26B"/>
+<path d="M250 82H270L282 258Q282 264 276 264H260Z" fill="#B48B55"/>
+<path d="M130 82H150L138 264H124Q118 264 118 258Z" fill="#D6B37F"/>
+<rect x="126" y="56" width="148" height="28" rx="3" fill="#B48B55"/>
+<rect x="116" y="65" width="168" height="9" rx="4.5" fill="#2B1A12"/>
+<circle cx="200" cy="101" r="5" fill="#B48B55"/><circle cx="200" cy="101" r="2" fill="#2B1A12" opacity=".5"/>
+<rect x="146" y="116" width="108" height="118" fill="#A9741B"/>
+<rect x="152" y="122" width="96" height="106" fill="none" stroke="#F6EBD6" stroke-width="1.5" stroke-dasharray="7 3"/>
+<g transform="rotate(28 200.0 146.0)"><ellipse cx="200.0" cy="146.0" rx="8.6" ry="13.0" fill="#F6EBD6"/><path d="M200.0 134.3C194.8 142.1 205.2 149.9 200.0 157.7" fill="none" stroke="#A9741B" stroke-width="2.1" stroke-linecap="round"/></g>
+<g fill="#F6EBD6" font-family="'Courier New', Courier, monospace" text-anchor="middle"><text x="200" y="184" font-size="15.0" font-weight="700" letter-spacing="1">BENSA</text>
+<text x="200" y="208" font-size="9.5" letter-spacing="1.5">SIDAMA</text>
+<text x="200" y="222" font-size="8" letter-spacing="2" opacity=".8">250 G · WHOLE BEAN</text></g>
+<g transform="rotate(83 64.5 251.6)"><ellipse cx="64.5" cy="251.6" rx="7.5" ry="11.4" fill="#8E5A30"/><path d="M64.5 241.3C59.9 248.1 69.0 255.0 64.5 261.9" fill="none" stroke="#1C0F08" stroke-width="1.8" stroke-linecap="round"/></g><g transform="rotate(90 100.1 264.3)"><ellipse cx="100.1" cy="264.3" rx="8.2" ry="12.4" fill="#8E5A30"/><path d="M100.1 253.2C95.1 260.6 105.0 268.1 100.1 275.5" fill="none" stroke="#1C0F08" stroke-width="2.0" stroke-linecap="round"/></g><g transform="rotate(153 46.2 267.5)"><ellipse cx="46.2" cy="267.5" rx="8.0" ry="12.1" fill="#8E5A30"/><path d="M46.2 256.6C41.4 263.8 51.1 271.1 46.2 278.4" fill="none" stroke="#1C0F08" stroke-width="1.9" stroke-linecap="round"/></g><g transform="rotate(32 306.6 260.0)"><ellipse cx="306.6" cy="260.0" rx="8.1" ry="12.3" fill="#8E5A30"/><path d="M306.6 249.0C301.6 256.4 311.5 263.7 306.6 271.1" fill="none" stroke="#1C0F08" stroke-width="2.0" stroke-linecap="round"/></g><g transform="rotate(17 338.2 250.6)"><ellipse cx="338.2" cy="250.6" rx="8.0" ry="12.1" fill="#8E5A30"/><path d="M338.2 239.6C333.4 246.9 343.1 254.2 338.2 261.5" fill="none" stroke="#1C0F08" stroke-width="1.9" stroke-linecap="round"/></g><g transform="rotate(107 346.1 270.0)"><ellipse cx="346.1" cy="270.0" rx="8.8" ry="13.3" fill="#8E5A30"/><path d="M346.1 258.0C340.8 266.0 351.5 274.0 346.1 282.0" fill="none" stroke="#1C0F08" stroke-width="2.1" stroke-linecap="round"/></g><g transform="rotate(9 290.1 272.6)"><ellipse cx="290.1" cy="272.6" rx="8.0" ry="12.1" fill="#8E5A30"/><path d="M290.1 261.7C285.2 269.0 294.9 276.2 290.1 283.5" fill="none" stroke="#1C0F08" stroke-width="1.9" stroke-linecap="round"/></g>
+</svg>

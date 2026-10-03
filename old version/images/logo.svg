@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kaffa Coffee Market">
+<circle cx="32" cy="32" r="32" fill="#B4281F"/>
+<circle cx="32" cy="32" r="25" fill="none" stroke="#F6EBD6" stroke-width="2.5" stroke-dasharray="33.27 6" transform="rotate(38 32 32)"/>
+<g transform="rotate(28 32.0 32.0)"><ellipse cx="32.0" cy="32.0" rx="9.9" ry="15.0" fill="#F6EBD6"/><path d="M32.0 18.5C26.0 27.5 38.0 36.5 32.0 45.5" fill="none" stroke="#B4281F" stroke-width="2.4" stroke-linecap="round"/></g>
+</svg>

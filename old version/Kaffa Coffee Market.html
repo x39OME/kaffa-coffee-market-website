@@ -1,0 +1,774 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Kaffa Coffee Market</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a market stall ledger. One 72rem column under a sticky stall header; the hero pairs the
+   pitch with a stencilled export sack; lots sit in an even grid of tag cards; the bag is a side drawer. */
+:root {
+  --bg: #E7EBDD;          /* unroasted green coffee */
+  --surface: #F4F6ED;
+  --ink: #1B2A20;
+  --muted: #4F6053;
+  --line: #C3CCB6;
+  --cherry: #B4281F;      /* ripe coffee cherry */
+  --on-cherry: #FFF5EC;
+  --forest: #23513A;
+  --ochre: #94651A;
+  --plum: #6B2D5C;
+  --clay: #8A4B2A;
+  --jute: #CBA96F;        /* export sack */
+  --jute-weave: #B8935A;
+  --sack-ink: #2A1D10;
+  --scrim: rgba(15, 28, 22, .55);
+
+  --font-display: "Stardos Stencil", "Rockwell", "Courier New", serif;
+  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --step--1: .8125rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.75rem;
+  --step-3: clamp(2rem, 4.5vw, 2.75rem);
+  --step-4: clamp(2.5rem, 7vw, 4.5rem);
+  --gutter: clamp(1rem, 4vw, 2rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1C16; --surface: #17281F; --ink: #E3EBDB; --muted: #9DB0A0; --line: #2C4235;
+    --cherry: #E5604F; --on-cherry: #1A0A07; --forest: #7FC29B; --ochre: #DDAA52;
+    --plum: #CB94BF; --clay: #D6966F; --jute: #B8935A; --jute-weave: #A27E48; --sack-ink: #22170C;
+    --scrim: rgba(4, 10, 7, .7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1C16; --surface: #17281F; --ink: #E3EBDB; --muted: #9DB0A0; --line: #2C4235;
+  --cherry: #E5604F; --on-cherry: #1A0A07; --forest: #7FC29B; --ochre: #DDAA52;
+  --plum: #CB94BF; --clay: #D6966F; --jute: #B8935A; --jute-weave: #A27E48; --sack-ink: #22170C;
+  --scrim: rgba(4, 10, 7, .7);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: var(--step-0); line-height: 1.55;
+}
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--cherry); outline-offset: 2px; }
+
+.wrap { width: min(72rem, 100%); margin-inline: auto; padding-inline: var(--gutter); }
+.display { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; line-height: 1; text-wrap: balance; }
+.mono { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: .04em; text-transform: uppercase; }
+.muted { color: var(--muted); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .7rem 1.1rem; border-radius: 3px; border: 1.5px solid var(--ink);
+  background: transparent; font-weight: 600; text-decoration: none; line-height: 1.2;
+  transition: background-color .15s, color .15s, transform .1s;
+}
+.btn:hover { background: var(--ink); color: var(--bg); }
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--cherry); border-color: var(--cherry); color: var(--on-cherry); }
+.btn-primary:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.btn-block { width: 100%; }
+.link-btn { background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Header */
+.site-head {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: var(--bg); border-bottom: 1.5px solid var(--ink);
+}
+.head-row { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem; padding-block: .75rem; }
+.brand { display: flex; align-items: baseline; gap: .6rem; text-decoration: none; margin-right: auto; }
+.brand-name { font-size: var(--step-2); }
+.brand-sub { color: var(--muted); }
+.nav { display: flex; gap: 1.25rem; }
+.nav a { text-decoration: none; font-weight: 600; padding-block: .25rem; border-bottom: 2px solid transparent; }
+.nav a:hover { border-bottom-color: var(--cherry); }
+.bag-btn { padding: .5rem .85rem; }
+.bag-count {
+  min-width: 1.5rem; padding: .05rem .4rem; border-radius: 999px; text-align: center;
+  background: var(--cherry); color: var(--on-cherry); font-family: var(--font-mono); font-size: var(--step--1);
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 40rem) {
+  .brand-sub { display: none; }
+  .nav { order: 3; width: 100%; justify-content: space-between; gap: .75rem; }
+}
+
+/* Sections */
+main { display: flex; flex-direction: column; }
+.section { padding-block: clamp(2.5rem, 7vw, 4.5rem); scroll-margin-top: 4.5rem; }
+.section + .section { border-top: 1.5px solid var(--line); }
+.section-head { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 2rem; max-width: 42rem; }
+.section-head h2 { font-size: var(--step-3); }
+
+/* Hero */
+.hero { padding-block: clamp(2rem, 6vw, 4rem); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: center; }
+.hero-copy { display: flex; flex-direction: column; gap: 1.25rem; align-items: flex-start; }
+.hero h1 { font-size: var(--step-4); }
+.hero h1 em { font-style: normal; color: var(--cherry); }
+.hero-lede { font-size: var(--step-1); max-width: 34rem; line-height: 1.45; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.hero-facts { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; padding-top: 1rem; border-top: 1.5px solid var(--line); width: 100%; }
+.hero-facts li { display: flex; flex-direction: column; }
+.hero-facts strong { font-weight: 600; }
+
+.sack-fig { display: flex; flex-direction: column; gap: .75rem; }
+.sack {
+  position: relative; padding: 2.25rem 1.5rem 2.5rem; text-align: center;
+  display: flex; flex-direction: column; gap: .7rem; align-items: center;
+  background-color: var(--jute);
+  background-image:
+    repeating-linear-gradient(0deg, var(--jute-weave) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(90deg, var(--jute-weave) 0 1px, transparent 1px 4px);
+  color: var(--sack-ink); border-radius: 4px 4px 26px 26px / 4px 4px 16px 16px;
+  transform: rotate(-1.5deg);
+}
+.sack::before {
+  content: ""; position: absolute; inset: .55rem; pointer-events: none;
+  border: 2px dashed var(--sack-ink); opacity: .35; border-radius: inherit;
+}
+.sack p { font-family: var(--font-display); text-transform: uppercase; line-height: 1; opacity: .9; }
+.sack-s { font-size: var(--step-0); letter-spacing: .14em; }
+.sack-xl { font-size: clamp(3.25rem, 9vw, 5.5rem); font-weight: 700; letter-spacing: .04em; }
+.sack-m { font-size: var(--step-2); letter-spacing: .1em; }
+.sack-rule { width: 70%; height: 4px; background: var(--sack-ink); opacity: .8; }
+.sack-ico { font-size: var(--step-2); font-weight: 700; letter-spacing: .08em; padding: .3rem .8rem; border: 3px solid var(--sack-ink); }
+.sack-fig figcaption { font-size: var(--step--1); color: var(--muted); max-width: 26rem; }
+@media (max-width: 52rem) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .sack-fig { max-width: 24rem; }
+}
+
+/* Shop toolbar */
+.toolbar { display: flex; flex-wrap: wrap; gap: .75rem 1rem; align-items: center; margin-bottom: 1.25rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-right: auto; }
+.chip {
+  padding: .4rem .8rem; border-radius: 999px; border: 1.5px solid var(--line);
+  background: transparent; font-weight: 600; font-size: .9375rem;
+}
+.chip:hover { border-color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.field {
+  padding: .5rem .7rem; border-radius: 3px; border: 1.5px solid var(--line);
+  background: var(--surface); min-width: 0;
+}
+.field:hover { border-color: var(--muted); }
+#lot-search { width: 13rem; max-width: 100%; }
+.result-count { margin-bottom: 1rem; color: var(--muted); }
+
+/* Lot cards */
+.lots { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(18rem, 100%), 1fr)); gap: 1.25rem; }
+.lot {
+  display: flex; flex-direction: column; gap: 1rem; padding: 1.25rem; min-width: 0;
+  background: var(--surface); border: 1.5px solid var(--line); border-radius: 4px;
+}
+.lot-top { display: flex; gap: 1rem; align-items: flex-start; }
+.bag { width: 3.5rem; flex: none; }
+.bag-body, .bag-fold { fill: var(--c); }
+.bag-shade { fill: var(--ink); opacity: .22; }
+.bag-label { fill: var(--surface); }
+.bag-mark { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: square; }
+.lot-title { display: flex; flex-direction: column; gap: .35rem; min-width: 0; }
+.lot-code { color: var(--muted); }
+.lot-title h3 { font-size: var(--step-2); overflow-wrap: anywhere; }
+.lot-notes { font-weight: 500; }
+.lot-specs { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: .5rem; padding-block: .75rem; border-block: 1.5px dashed var(--line); }
+.lot-specs dt { color: var(--muted); }
+.lot-specs dd { font-weight: 600; font-variant-numeric: tabular-nums; }
+.roast { display: flex; align-items: center; gap: .6rem; }
+.pips { display: flex; gap: 3px; }
+.pip { width: 1.1rem; height: .5rem; background: var(--line); }
+.pip.on { background: var(--ink); }
+.lot-buy { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; margin-top: auto; }
+.sizes { display: inline-flex; border: 1.5px solid var(--ink); border-radius: 3px; overflow: hidden; }
+.sizes label { padding: .35rem .7rem; font-weight: 600; font-size: .9375rem; cursor: pointer; }
+.sizes input:checked + label { background: var(--ink); color: var(--bg); }
+.sizes input:focus-visible + label { outline: 2px solid var(--cherry); outline-offset: -2px; }
+.price { font-family: var(--font-mono); font-size: var(--step-1); font-weight: 500; font-variant-numeric: tabular-nums; }
+.empty { padding: 2.5rem 1rem; text-align: center; border: 1.5px dashed var(--line); border-radius: 4px; display: flex; flex-direction: column; gap: .75rem; align-items: center; }
+
+/* Origin */
+.origin-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(1.5rem, 5vw, 4rem); }
+.origin-text { display: flex; flex-direction: column; gap: 1rem; max-width: 36rem; }
+.steps { display: flex; flex-direction: column; counter-reset: step; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: .25rem 1rem; padding-block: 1rem; border-top: 1.5px solid var(--line); }
+.steps li:first-child { border-top: 0; padding-top: 0; }
+.steps li::before { content: counter(step, decimal-leading-zero); font-family: var(--font-mono); color: var(--cherry); font-weight: 500; grid-row: span 2; }
+.steps h3 { font-size: var(--step-1); font-family: var(--font-body); font-weight: 700; }
+@media (max-width: 52rem) { .origin-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Brew calculator */
+.brew { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+.brew-controls { display: flex; flex-direction: column; gap: 1.5rem; }
+.brew-controls fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .6rem; min-width: 0; }
+.brew-controls legend, .brew-controls .label { padding: 0; font-weight: 700; margin-bottom: .6rem; }
+.methods { display: flex; flex-wrap: wrap; gap: .4rem; }
+.servings-row { display: flex; align-items: center; gap: 1rem; }
+#brew-servings { flex: 1; min-width: 0; accent-color: var(--cherry); }
+.servings-val { font-family: var(--font-mono); font-size: var(--step-1); min-width: 2ch; text-align: right; font-variant-numeric: tabular-nums; }
+.recipe { background: var(--surface); border: 1.5px solid var(--ink); border-radius: 4px; padding: clamp(1.25rem, 3vw, 2rem); display: flex; flex-direction: column; gap: 1.25rem; }
+.recipe-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem; }
+.recipe-head h3 { font-size: var(--step-2); }
+.doses { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.dose-num { font-family: var(--font-display); font-weight: 700; font-size: var(--step-4); line-height: 1; font-variant-numeric: tabular-nums; }
+.dose-num small { font-family: var(--font-mono); font-size: var(--step-0); font-weight: 400; margin-left: .25rem; }
+.recipe-specs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; padding-block: 1rem; border-block: 1.5px dashed var(--line); }
+.recipe-specs dt { color: var(--muted); }
+.recipe-specs dd { font-weight: 600; }
+.recipe-steps { display: flex; flex-direction: column; gap: .4rem; list-style: decimal; padding-left: 1.25rem; }
+@media (max-width: 52rem) {
+  .brew { grid-template-columns: minmax(0, 1fr); }
+  .recipe-specs { grid-template-columns: minmax(0, 1fr); gap: .6rem; }
+}
+
+/* Visit / footer */
+.visit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr)); gap: 2rem; }
+.visit-grid h3 { font-family: var(--font-mono); font-size: var(--step--1); font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-bottom: .6rem; }
+.hours { display: grid; grid-template-columns: auto auto; justify-content: start; gap: .2rem 1.5rem; font-variant-numeric: tabular-nums; }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+.email { user-select: all; font-weight: 600; overflow-wrap: anywhere; }
+.site-foot { border-top: 1.5px solid var(--ink); padding-block: 1.5rem; }
+.site-foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; color: var(--muted); font-size: .9375rem; }
+
+/* Cart drawer */
+dialog.cart {
+  position: fixed; inset: 0 0 0 auto; margin: 0; padding: 0;
+  width: min(27rem, 100%); max-width: 100%; height: 100%; max-height: 100%;
+  border: 0; border-left: 1.5px solid var(--ink); background: var(--bg); color: var(--ink);
+}
+dialog.cart::backdrop { background: var(--scrim); }
+dialog.cart[open] { animation: slide-in .22s ease-out; }
+@keyframes slide-in { from { transform: translateX(2rem); opacity: .4; } to { transform: none; opacity: 1; } }
+.cart-inner {
+  display: flex; flex-direction: column; height: 100%;
+  padding: calc(1rem + env(safe-area-inset-top, 0px)) 1.25rem calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  gap: 1rem;
+}
+.cart-head { display: flex; justify-content: space-between; align-items: center; padding-bottom: .75rem; border-bottom: 1.5px solid var(--ink); }
+.cart-head h2 { font-size: var(--step-2); }
+.cart-lines { flex: 1; overflow-y: auto; display: flex; flex-direction: column; min-height: 0; }
+.line { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .5rem 1rem; padding-block: .9rem; border-bottom: 1.5px dashed var(--line); }
+.line-name { font-weight: 700; }
+.line-price { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; }
+.qty { display: inline-flex; align-items: center; justify-self: start; border: 1.5px solid var(--line); border-radius: 3px; }
+.qty button { width: 2rem; height: 2rem; border: 0; background: transparent; font-size: 1.1rem; line-height: 1; }
+.qty button:hover { background: var(--line); }
+.qty span { min-width: 2ch; text-align: center; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.line-remove { justify-self: end; align-self: center; font-size: .9375rem; color: var(--muted); }
+.cart-foot { display: flex; flex-direction: column; gap: .9rem; }
+.ship-meter { display: flex; flex-direction: column; gap: .4rem; font-size: .9375rem; }
+.ship-track { height: .4rem; background: var(--line); }
+.ship-fill { height: 100%; background: var(--forest); transition: width .2s; }
+.totals { display: grid; grid-template-columns: 1fr auto; gap: .3rem 0; }
+.totals dd { padding-left: 1rem; font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; }
+.totals .grand { font-weight: 700; font-size: var(--step-1); padding-top: .5rem; border-top: 1.5px solid var(--ink); }
+.notice { padding: .8rem 1rem; border: 1.5px solid var(--ochre); border-radius: 3px; font-size: .9375rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#top" aria-label="Kaffa Coffee Market, back to top">
+      <span class="brand-name display">Kaffa</span>
+      <span class="brand-sub mono">Coffee Market</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#shop">Shop</a>
+      <a href="#origin">Origin</a>
+      <a href="#brew">Brew guide</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <button class="btn bag-btn" id="bag-open" type="button" aria-haspopup="dialog">
+      Bag <span class="bag-count" id="bag-count">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="mono muted">Single-origin Ethiopian coffee, roasted to order</p>
+        <h1 class="display">Coffee from the forest where it <em>began</em>.</h1>
+        <p class="hero-lede">Arabica first grew wild in the cloud forests of Kaffa, in south-west Ethiopia. We buy small lots from that region and its neighbours, roast them twice a week, and post them the next morning.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#shop">Shop this week's lots</a>
+          <a class="btn" href="#brew">Open the brew guide</a>
+        </div>
+        <ul class="hero-facts">
+          <li><span class="mono muted">Grown at</span><strong>1,750 to 2,100 m</strong></li>
+          <li><span class="mono muted">Roast days</span><strong>Tuesday and Friday</strong></li>
+          <li><span class="mono muted">Shipping</span><strong>Free over $40</strong></li>
+        </ul>
+      </div>
+      <figure class="sack-fig">
+        <div class="sack">
+          <p class="sack-s">Produce of Ethiopia</p>
+          <p class="sack-xl">Kaffa</p>
+          <p class="sack-m">Coffee Market</p>
+          <span class="sack-rule"></span>
+          <p class="sack-s">Arabica · Grade 1 · Washed</p>
+          <p class="sack-ico">010 / 0274 / 0031</p>
+          <p class="sack-s">Net 60 kg</p>
+        </div>
+        <figcaption>Every export sack carries a three-part mark: country, exporter, lot. 010 is Ethiopia's code. A full sack weighs 60 kg, enough for 240 of our 250 g bags before roasting.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="shop">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="mono muted">This week's lots</p>
+        <h2 class="display">The market table</h2>
+        <p>Every bag lists where the coffee grew, how it was processed and how it scored on the 100-point cupping scale. Whole bean, roasted on the next roast day after you order.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="chips" role="group" aria-label="Filter lots by type" id="chips">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">All lots</button>
+          <button class="chip" type="button" data-filter="single" aria-pressed="false">Single origin</button>
+          <button class="chip" type="button" data-filter="blend" aria-pressed="false">Blends</button>
+          <button class="chip" type="button" data-filter="decaf" aria-pressed="false">Decaf</button>
+        </div>
+        <label class="sr-only" for="lot-search">Search lots</label>
+        <input class="field" id="lot-search" type="search" placeholder="Search notes, region…" autocomplete="off">
+        <label class="sr-only" for="lot-sort">Sort lots</label>
+        <select class="field" id="lot-sort">
+          <option value="featured">Sort: featured</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+          <option value="score">Cup score: highest</option>
+          <option value="roast">Roast: lightest first</option>
+        </select>
+      </div>
+      <p class="result-count mono" id="result-count" aria-live="polite"></p>
+      <div class="lots" id="lots"></div>
+    </div>
+  </section>
+
+  <section class="section" id="origin">
+    <div class="wrap">
+      <div class="origin-grid">
+        <div class="origin-text">
+          <p class="mono muted">Origin</p>
+          <h2 class="display" style="font-size: var(--step-3)">Kaffa gave coffee its name</h2>
+          <p>Kaffa is a highland region around the town of Bonga. Coffea arabica still grows wild there under the forest canopy, and local families have picked it for centuries. In 2010 UNESCO listed the Kafa forest as a biosphere reserve to protect those wild trees.</p>
+          <p>Our stall is named for that place. About a third of what we sell comes from Kaffa itself. The rest comes from Yirgacheffe, Guji, Sidama, Limu and Harrar, each with its own character in the cup.</p>
+          <p>Ethiopian coffee is graded 1 to 5 by defect count and cup quality. We buy Grade 1 and Grade 2 only.</p>
+        </div>
+        <div>
+          <p class="mono muted" style="margin-bottom: 1rem">From tree to your door</p>
+          <ol class="steps">
+            <li><h3>Picked by hand</h3><p>The main harvest runs from October to January. Pickers take only red, ripe cherries and return to each tree several times.</p></li>
+            <li><h3>Washed or sun-dried</h3><p>Washed lots are pulped and fermented in water. Natural lots dry whole on raised beds for two to four weeks.</p></li>
+            <li><h3>Milled and graded</h3><p>The dry husk comes off, beans are sorted by size and density, and each lot is cupped and graded.</p></li>
+            <li><h3>Roasted in small batches</h3><p>We roast on Tuesday and Friday, in batches of 12 kg, and print the roast date on every bag.</p></li>
+            <li><h3>Posted the next morning</h3><p>Bags leave within 24 hours of roasting. Most coffees taste best 7 to 30 days after the roast date.</p></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="brew">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="mono muted">Brew guide</p>
+        <h2 class="display">Weigh it, don't guess</h2>
+        <p>Pick a method and how many you're serving. The recipe gives you the dose, the water and the timing.</p>
+      </div>
+      <div class="brew">
+        <div class="brew-controls">
+          <fieldset>
+            <legend>Method</legend>
+            <div class="methods" id="methods"></div>
+          </fieldset>
+          <div>
+            <label class="label" for="brew-servings" id="servings-label" style="display:block">Servings</label>
+            <div class="servings-row">
+              <input id="brew-servings" type="range" min="1" max="6" step="1" value="2">
+              <output class="servings-val" id="servings-val" for="brew-servings">2</output>
+            </div>
+          </div>
+          <p class="muted" id="brew-pair"></p>
+        </div>
+        <div class="recipe" id="recipe" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="visit">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="mono muted">Visit</p>
+        <h2 class="display">Find the stall</h2>
+      </div>
+      <div class="visit-grid">
+        <div>
+          <h3>Where</h3>
+          <p>Stall 7, Old Market Hall<br>Walk in through the east gate and follow the smell.</p>
+        </div>
+        <div>
+          <h3>Opening hours</h3>
+          <dl class="hours">
+            <dt>Tue to Sat</dt><dd>8:00 – 18:00</dd>
+            <dt>Sunday</dt><dd>9:00 – 14:00</dd>
+            <dt>Monday</dt><dd>Closed</dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Write to us</h3>
+          <div class="email-row">
+            <span class="email" id="email">hello@kaffa-coffee.example</span>
+            <button class="btn" type="button" id="copy-email" style="padding:.35rem .7rem">Copy</button>
+          </div>
+          <p class="muted" style="margin-top:.6rem">Wholesale and office orders welcome.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>© 2026 Kaffa Coffee Market</span>
+    <span>Whole bean only. We grind at the stall on request.</span>
+  </div>
+</footer>
+
+<dialog class="cart" id="cart" aria-labelledby="cart-title">
+  <div class="cart-inner">
+    <div class="cart-head">
+      <h2 class="display" id="cart-title">Your bag</h2>
+      <button class="btn" type="button" id="bag-close" style="padding:.4rem .8rem">Close</button>
+    </div>
+    <div class="cart-lines" id="cart-lines"></div>
+    <div class="cart-foot" id="cart-foot"></div>
+  </div>
+</dialog>
+
+<p class="sr-only" id="announce" aria-live="polite"></p>
+
+<script>
+(() => {
+  'use strict';
+
+  /* ---------- Data ---------- */
+  const LOTS = [
+    { id: 'k01', name: 'Bonga Forest',       type: 'single', region: 'Kaffa',       process: 'Natural', alt: 1750, score: 87.5, roast: 2, notes: 'Blueberry, dark cocoa, bergamot',  price: 18,   color: 'cherry' },
+    { id: 'k02', name: 'Kochere',            type: 'single', region: 'Yirgacheffe', process: 'Washed',  alt: 2000, score: 88.5, roast: 1, notes: 'Jasmine, lemon, black tea',        price: 19,   color: 'ochre'  },
+    { id: 'k03', name: 'Shakiso',            type: 'single', region: 'Guji',        process: 'Natural', alt: 2100, score: 88,   roast: 2, notes: 'Strawberry, peach, milk chocolate', price: 20,   color: 'plum'   },
+    { id: 'k04', name: 'Bensa',              type: 'single', region: 'Sidama',      process: 'Honey',   alt: 2050, score: 87,   roast: 2, notes: 'Apricot, honey, lime',             price: 18.5, color: 'ochre'  },
+    { id: 'k05', name: 'Longberry',          type: 'single', region: 'Harrar',      process: 'Natural', alt: 1900, score: 85.5, roast: 3, notes: 'Blackberry, red wine, cardamom',   price: 17,   color: 'plum'   },
+    { id: 'k06', name: 'Limu Kossa',         type: 'single', region: 'Limu',        process: 'Washed',  alt: 1850, score: 86,   roast: 3, notes: 'Orange, caramel, honeysuckle',     price: 16.5, color: 'forest' },
+    { id: 'k07', name: 'Market Blend No. 1', type: 'blend',  region: 'Kaffa + Limu', process: 'Mixed process', alt: 1800, score: 85, roast: 4, notes: 'Cocoa, hazelnut, cherry',  price: 15,   color: 'clay'   },
+    { id: 'k08', name: 'Jebena Dark',        type: 'blend',  region: 'Kaffa + Harrar', process: 'Natural', alt: 1800, score: 83.5, roast: 5, notes: 'Molasses, walnut, smoke',        price: 14,   color: 'forest' },
+    { id: 'k09', name: 'Sidama Decaf',       type: 'decaf',  region: 'Sidama',      process: 'Water decaf', alt: 1950, score: 84, roast: 3, notes: 'Fig, brown sugar, cocoa',         price: 17,   color: 'clay'   }
+  ];
+  const ROASTS = ['', 'Light', 'Light-medium', 'Medium', 'Medium-dark', 'Dark'];
+  const TYPES = { single: 'Single origin', blend: 'Blend', decaf: 'Decaf' };
+  const FREE_SHIPPING = 40, SHIPPING = 5, KILO_FACTOR = 3.4;
+
+  const METHODS = {
+    pourover:  { name: 'Pour-over',    serving: 'cups (250 ml)',         ml: 250, ratio: 16, grind: 'Medium-fine, like table salt', temp: '94 °C', time: '3:00',
+                 pair: 'Best with light roasts such as Kochere or Bensa.',
+                 steps: ['Rinse the paper filter with hot water.', 'Pour twice the coffee weight in water and wait 40 seconds.', 'Pour the rest in slow circles, finishing by 2:00.', 'Let it drain. Aim for 3:00 in total.'] },
+    press:     { name: 'French press', serving: 'cups (250 ml)',         ml: 250, ratio: 15, grind: 'Coarse, like sea salt',        temp: '95 °C', time: '4:00',
+                 pair: 'Suits fuller coffees such as Longberry or Jebena Dark.',
+                 steps: ['Add coffee, then all the water.', 'Stir once and put the lid on, plunger up.', 'Wait 4 minutes, then press slowly.', 'Pour straight away so it stops brewing.'] },
+    aeropress: { name: 'AeroPress',    serving: 'cups (200 ml)',         ml: 200, ratio: 14, grind: 'Medium-fine',                  temp: '88 °C', time: '2:00',
+                 pair: 'Forgiving with any lot. Try Shakiso.',
+                 steps: ['Rinse the filter and set the brewer on a mug.', 'Add coffee and water, then stir for 10 seconds.', 'Fit the plunger and wait until 1:30.', 'Press gently for 30 seconds.'] },
+    espresso:  { name: 'Espresso',     serving: 'double shots',          ml: 36,  ratio: 2,  grind: 'Fine, like caster sugar',      temp: '93 °C', time: '0:28', yieldLabel: 'Yield in the cup', unit: 'g',
+                 pair: 'Market Blend No. 1 was built for this.',
+                 steps: ['Dose and level the basket.', 'Tamp flat and firm.', 'Start the shot and the timer together.', 'Stop at the target yield. Grind finer if it ran fast.'] },
+    jebena:    { name: 'Jebena',       serving: 'sini cups (60 ml)',     ml: 60,  ratio: 12, grind: 'Fine, pounded or ground',      temp: 'Rolling boil', time: '8:00',
+                 pair: 'The traditional Ethiopian clay pot. Use Jebena Dark or Bonga Forest.',
+                 steps: ['Bring the water to a boil in the jebena.', 'Add the coffee and return it to a boil.', 'Take it off the heat and rest it tilted for 5 minutes so the grounds settle.', 'Pour in one steady stream into small sini cups.'] }
+  };
+
+  /* ---------- State ---------- */
+  const state = { filter: 'all', sort: 'featured', query: '', sizes: {}, cart: loadCart(), method: 'pourover', servings: 2, checkoutNote: false };
+
+  function loadCart() {
+    try {
+      const raw = JSON.parse(localStorage.getItem('kaffa-cart') || '[]');
+      return Array.isArray(raw) ? raw.filter(l => LOTS.some(p => p.id === l.id) && (l.size === 250 || l.size === 1000) && l.qty > 0) : [];
+    } catch (e) { return []; }
+  }
+  function saveCart() {
+    try { localStorage.setItem('kaffa-cart', JSON.stringify(state.cart)); } catch (e) { /* storage unavailable: cart lives in memory */ }
+  }
+
+  /* ---------- Helpers ---------- */
+  const $ = id => document.getElementById(id);
+  const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+  const fmt = n => money.format(n);
+  const priceOf = (lot, size) => size === 1000 ? Math.round(lot.price * KILO_FACTOR) : lot.price;
+  const sizeLabel = size => size === 1000 ? '1 kg' : '250 g';
+  const sizeFor = id => state.sizes[id] || 250;
+  const announce = msg => { $('announce').textContent = msg; };
+
+  const bagSvg = color => `
+    <svg class="bag" viewBox="0 0 64 84" aria-hidden="true" style="--c: var(--${color})">
+      <path class="bag-body" d="M8 14h48l4 62a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/>
+      <path class="bag-fold" d="M8 4h48v10H8z"/>
+      <path class="bag-shade" d="M8 4h48v10H8z"/>
+      <rect class="bag-label" x="16" y="30" width="32" height="30"/>
+      <path class="bag-mark" d="M26 38v14M26 45l10-7M26 45l10 7"/>
+    </svg>`;
+
+  /* ---------- Shop ---------- */
+  function visibleLots() {
+    const q = state.query.trim().toLowerCase();
+    let list = LOTS.filter(l => state.filter === 'all' || l.type === state.filter);
+    if (q) list = list.filter(l => [l.name, l.region, l.process, l.notes, TYPES[l.type], ROASTS[l.roast]].join(' ').toLowerCase().includes(q));
+    const by = {
+      'price-asc': (a, b) => a.price - b.price,
+      'price-desc': (a, b) => b.price - a.price,
+      score: (a, b) => b.score - a.score,
+      roast: (a, b) => a.roast - b.roast || b.score - a.score
+    }[state.sort];
+    return by ? [...list].sort(by) : list;
+  }
+
+  function lotCard(l) {
+    const size = sizeFor(l.id);
+    const pips = [1, 2, 3, 4, 5].map(i => `<span class="pip${i <= l.roast ? ' on' : ''}"></span>`).join('');
+    const radio = s => `
+      <input class="sr-only" type="radio" name="size-${l.id}" id="size-${l.id}-${s}" value="${s}" data-size-for="${l.id}"${size === s ? ' checked' : ''}>
+      <label for="size-${l.id}-${s}">${sizeLabel(s)}</label>`;
+    return `
+      <article class="lot">
+        <div class="lot-top">
+          ${bagSvg(l.color)}
+          <div class="lot-title">
+            <span class="lot-code mono">Lot ${l.id.toUpperCase()} · ${TYPES[l.type]}</span>
+            <h3 class="display">${l.name}</h3>
+            <span class="muted">${l.region} · ${l.process}</span>
+          </div>
+        </div>
+        <p class="lot-notes">${l.notes}</p>
+        <dl class="lot-specs">
+          <div><dt class="mono">Altitude</dt><dd>${l.alt.toLocaleString('en-US')} m</dd></div>
+          <div><dt class="mono">Cup score</dt><dd>${l.score.toFixed(1)}</dd></div>
+          <div><dt class="mono">Roast</dt><dd>${l.roast} of 5</dd></div>
+        </dl>
+        <div class="roast" role="img" aria-label="Roast level: ${ROASTS[l.roast]}">
+          <span class="pips">${pips}</span><span class="mono muted">${ROASTS[l.roast]}</span>
+        </div>
+        <div class="lot-buy">
+          <div class="sizes" role="radiogroup" aria-label="Bag size for ${l.name}">${radio(250)}${radio(1000)}</div>
+          <span class="price" data-price-for="${l.id}">${fmt(priceOf(l, size))}</span>
+        </div>
+        <button class="btn btn-primary btn-block" type="button" data-add="${l.id}">Add to bag</button>
+      </article>`;
+  }
+
+  function renderLots() {
+    const list = visibleLots();
+    const box = $('lots');
+    $('result-count').textContent = `${list.length} of ${LOTS.length} lots`;
+    if (!list.length) {
+      box.innerHTML = `<div class="empty" style="grid-column: 1 / -1"><p id="empty-msg"></p><button class="btn" type="button" id="clear-filters">Show all lots</button></div>`;
+      $('empty-msg').textContent = state.query.trim() ? `No lots match “${state.query.trim()}”.` : 'No lots in this group right now.';
+      return;
+    }
+    box.innerHTML = list.map(lotCard).join('');
+  }
+
+  $('chips').addEventListener('click', e => {
+    const chip = e.target.closest('[data-filter]');
+    if (!chip) return;
+    state.filter = chip.dataset.filter;
+    document.querySelectorAll('#chips .chip').forEach(c => c.setAttribute('aria-pressed', String(c === chip)));
+    renderLots();
+  });
+  $('lot-search').addEventListener('input', e => { state.query = e.target.value; renderLots(); });
+  $('lot-sort').addEventListener('change', e => { state.sort = e.target.value; renderLots(); });
+
+  $('lots').addEventListener('change', e => {
+    const id = e.target.dataset.sizeFor;
+    if (!id) return;
+    state.sizes[id] = Number(e.target.value);
+    const lot = LOTS.find(l => l.id === id);
+    document.querySelector(`[data-price-for="${id}"]`).textContent = fmt(priceOf(lot, state.sizes[id]));
+  });
+  $('lots').addEventListener('click', e => {
+    if (e.target.id === 'clear-filters') {
+      state.filter = 'all'; state.query = ''; $('lot-search').value = '';
+      document.querySelectorAll('#chips .chip').forEach(c => c.setAttribute('aria-pressed', String(c.dataset.filter === 'all')));
+      renderLots();
+      return;
+    }
+    const btn = e.target.closest('[data-add]');
+    if (!btn) return;
+    const lot = LOTS.find(l => l.id === btn.dataset.add);
+    addToCart(lot.id, sizeFor(lot.id));
+    announce(`Added ${lot.name}, ${sizeLabel(sizeFor(lot.id))}, to your bag.`);
+    btn.textContent = 'Added';
+    clearTimeout(btn._t);
+    btn._t = setTimeout(() => { btn.textContent = 'Add to bag'; }, 1200);
+  });
+
+  /* ---------- Cart ---------- */
+  function addToCart(id, size) {
+    const line = state.cart.find(l => l.id === id && l.size === size);
+    if (line) line.qty += 1; else state.cart.push({ id, size, qty: 1 });
+    cartChanged();
+  }
+  function cartChanged() {
+    state.cart = state.cart.filter(l => l.qty > 0);
+    state.checkoutNote = false;
+    saveCart();
+    renderCart();
+  }
+  function cartTotals() {
+    const subtotal = state.cart.reduce((sum, l) => sum + priceOf(LOTS.find(p => p.id === l.id), l.size) * l.qty, 0);
+    const shipping = subtotal === 0 || subtotal >= FREE_SHIPPING ? 0 : SHIPPING;
+    return { subtotal, shipping, total: subtotal + shipping, count: state.cart.reduce((n, l) => n + l.qty, 0) };
+  }
+
+  function renderCart() {
+    const t = cartTotals();
+    $('bag-count').textContent = t.count;
+    $('bag-open').setAttribute('aria-label', `Open bag, ${t.count} ${t.count === 1 ? 'item' : 'items'}`);
+    const lines = $('cart-lines'), foot = $('cart-foot');
+
+    if (!state.cart.length) {
+      lines.innerHTML = `<div class="empty" style="margin-top:1rem"><p>Your bag is empty.</p><p class="muted">Add a lot from the market table to start an order.</p></div>`;
+      foot.innerHTML = `<button class="btn btn-block" type="button" data-cart="close">Keep shopping</button>`;
+      return;
+    }
+
+    lines.innerHTML = state.cart.map((l, i) => {
+      const lot = LOTS.find(p => p.id === l.id);
+      return `
+        <div class="line">
+          <div><div class="line-name">${lot.name}</div><div class="muted">${sizeLabel(l.size)} · ${fmt(priceOf(lot, l.size))} each</div></div>
+          <div class="line-price">${fmt(priceOf(lot, l.size) * l.qty)}</div>
+          <div class="qty">
+            <button type="button" data-cart="dec" data-i="${i}" aria-label="Remove one ${lot.name}">−</button>
+            <span aria-label="Quantity">${l.qty}</span>
+            <button type="button" data-cart="inc" data-i="${i}" aria-label="Add one ${lot.name}">+</button>
+          </div>
+          <button class="link-btn line-remove" type="button" data-cart="remove" data-i="${i}">Remove</button>
+        </div>`;
+    }).join('');
+
+    const left = FREE_SHIPPING - t.subtotal;
+    const pct = Math.min(100, Math.round(t.subtotal / FREE_SHIPPING * 100));
+    foot.innerHTML = `
+      <div class="ship-meter">
+        <span>${left > 0 ? `Add ${fmt(left)} more for free shipping.` : 'This order ships free.'}</span>
+        <div class="ship-track"><div class="ship-fill" style="width:${pct}%"></div></div>
+      </div>
+      <dl class="totals">
+        <dt>Subtotal</dt><dd>${fmt(t.subtotal)}</dd>
+        <dt>Shipping</dt><dd>${t.shipping ? fmt(t.shipping) : 'Free'}</dd>
+        <dt class="grand">Total</dt><dd class="grand">${fmt(t.total)}</dd>
+      </dl>
+      ${state.checkoutNote ? `<p class="notice" role="status">Checkout is not connected yet. No order was placed and nothing was charged. Your bag is saved on this device.</p>` : ''}
+      <button class="btn btn-primary btn-block" type="button" data-cart="checkout">Check out · ${fmt(t.total)}</button>
+      <button class="link-btn" type="button" data-cart="clear" style="align-self:center">Empty the bag</button>`;
+  }
+
+  const cart = $('cart');
+  $('bag-open').addEventListener('click', () => { renderCart(); cart.showModal(); });
+  $('bag-close').addEventListener('click', () => cart.close());
+  cart.addEventListener('click', e => {
+    if (e.target === cart) { cart.close(); return; }
+    const btn = e.target.closest('[data-cart]');
+    if (!btn) return;
+    const line = state.cart[Number(btn.dataset.i)];
+    switch (btn.dataset.cart) {
+      case 'inc': line.qty += 1; cartChanged(); break;
+      case 'dec': line.qty -= 1; cartChanged(); break;
+      case 'remove': line.qty = 0; cartChanged(); break;
+      case 'clear': state.cart = []; cartChanged(); break;
+      case 'close': cart.close(); break;
+      case 'checkout': state.checkoutNote = true; renderCart(); break;
+    }
+  });
+
+  /* ---------- Brew guide ---------- */
+  function recipeFor(key, servings) {
+    const m = METHODS[key];
+    const water = m.ml * servings;
+    return { m, water, coffee: Math.round(water / m.ratio) };
+  }
+  function renderBrew() {
+    const { m, water, coffee } = recipeFor(state.method, state.servings);
+    $('methods').innerHTML = Object.entries(METHODS).map(([k, v]) =>
+      `<button class="chip" type="button" data-method="${k}" aria-pressed="${k === state.method}">${v.name}</button>`).join('');
+    $('servings-label').textContent = `Servings: ${m.serving}`;
+    $('servings-val').textContent = state.servings;
+    $('brew-pair').textContent = m.pair;
+    $('recipe').innerHTML = `
+      <div class="recipe-head">
+        <h3 class="display">${m.name}</h3>
+        <span class="mono muted">Ratio 1 : ${m.ratio}</span>
+      </div>
+      <div class="doses">
+        <div><div class="mono muted">Coffee</div><div class="dose-num">${coffee}<small>g</small></div></div>
+        <div><div class="mono muted">${m.yieldLabel || 'Water'}</div><div class="dose-num">${water}<small>${m.unit || 'ml'}</small></div></div>
+      </div>
+      <dl class="recipe-specs">
+        <div><dt class="mono">Grind</dt><dd>${m.grind}</dd></div>
+        <div><dt class="mono">Water temp</dt><dd>${m.temp}</dd></div>
+        <div><dt class="mono">Brew time</dt><dd>${m.time}</dd></div>
+      </dl>
+      <ol class="recipe-steps">${m.steps.map(s => `<li>${s}</li>`).join('')}</ol>`;
+  }
+  $('methods').addEventListener('click', e => {
+    const b = e.target.closest('[data-method]');
+    if (!b) return;
+    state.method = b.dataset.method;
+    renderBrew();
+    document.querySelector(`[data-method="${state.method}"]`).focus();
+  });
+  $('brew-servings').addEventListener('input', e => { state.servings = Number(e.target.value); renderBrew(); });
+
+  /* ---------- Copy email ---------- */
+  $('copy-email').addEventListener('click', async e => {
+    const btn = e.currentTarget, el = $('email');
+    try {
+      await navigator.clipboard.writeText(el.textContent);
+      btn.textContent = 'Copied';
+    } catch (err) {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const sel = getSelection();
+      sel.removeAllRanges(); sel.addRange(range);
+      btn.textContent = 'Selected';
+    }
+    setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+  });
+
+  /* ---------- Boot ---------- */
+  state.servings = Number($('brew-servings').value) || 2;
+  renderLots();
+  renderCart();
+  renderBrew();
+})();
+</script>
+
+</body></html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="pourover">
+<rect width="240" height="240" rx="10" fill="#EBD9B8"/><circle cx="120" cy="126" r="92" fill="#E0C898"/>
+<path d="M82 132H158L176 200Q178 210 168 210H72Q62 210 64 200Z" fill="#F6EBD6" stroke="#2B1A12" stroke-width="3" stroke-linejoin="round"/>
+<path d="M69 180H171L176 200Q178 209 168 209H72Q62 209 64 200Z" fill="#4A2A18"/>
+<path d="M68 70H172L140 124H100Z" fill="#FBF4E6" stroke="#2B1A12" stroke-width="3" stroke-linejoin="round"/>
+<path d="M92 76L108 118M120 76V118M148 76L132 118" stroke="#B48B55" stroke-width="2"/>
+<path d="M62 68H178" stroke="#2B1A12" stroke-width="5" stroke-linecap="round"/>
+<rect x="86" y="122" width="68" height="10" rx="3" fill="#2B1A12"/>
+<circle cx="120" cy="150" r="4" fill="#4A2A18"/><circle cx="120" cy="166" r="3" fill="#4A2A18"/>
+<path d="M104 54q-6-9 0-18M122 50q-6-9 0-18M140 54q-6-9 0-18" fill="none" stroke="#FBF4E6" stroke-width="3" stroke-linecap="round"/>
+</svg>

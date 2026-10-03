@@ -1,0 +1,324 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Kaffa Coffee Market</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+
+<a class="skip" href="#shop">Skip to the shop</a>
+
+<!-- Ticker -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Roasted Tuesday &amp; Friday</span><i></i><span>Free shipping over $40</span><i></i><span>Grade 1 &amp; 2 arabica only</span><i></i><span>Wild forest coffee from Kaffa</span><i></i><span>Posted within 24 hours</span><i></i>
+    <span>Roasted Tuesday &amp; Friday</span><i></i><span>Free shipping over $40</span><i></i><span>Grade 1 &amp; 2 arabica only</span><i></i><span>Wild forest coffee from Kaffa</span><i></i><span>Posted within 24 hours</span><i></i>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-head" id="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#top" aria-label="Kaffa Coffee Market, back to top">
+      <img class="brand-mark" src="images/logo.svg" alt="" width="44" height="44">
+      <span class="brand-text">
+        <span class="brand-name display">Kaffa</span>
+        <span class="brand-sub mono">Coffee Market</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#shop">Shop</a>
+      <a href="#origin">Origin</a>
+      <a href="#brew">Brew guide</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <button class="btn bag-btn" id="bag-open" type="button" aria-haspopup="dialog">
+      Bag <span class="bag-count" id="bag-count">0</span>
+    </button>
+  </div>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero band" id="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="mono muted load" style="--n:0">Single-origin Ethiopian coffee, roasted to order</p>
+        <h1 class="display load" style="--n:1">Coffee from the forest where it <em>began</em>.</h1>
+        <p class="hero-lede load" style="--n:2">Arabica first grew wild in the cloud forests of Kaffa, in south-west Ethiopia. We buy small lots from that region and its neighbours, roast them twice a week, and post them the next morning.</p>
+        <div class="hero-actions load" style="--n:3">
+          <a class="btn btn-primary" href="#shop">Shop this week's lots</a>
+          <a class="btn" href="#brew">Open the brew guide</a>
+        </div>
+        <ul class="hero-facts load" style="--n:4">
+          <li><strong><span data-count="9">9</span></strong><span class="mono muted">Lots on the table</span></li>
+          <li><strong><span data-count="2100">2,100</span> m</strong><span class="mono muted">Highest farm</span></li>
+          <li><strong><span data-count="24">24</span> h</strong><span class="mono muted">Roast to post</span></li>
+        </ul>
+      </div>
+
+      <figure class="hero-art load" style="--n:2">
+        <div class="stage" id="stage">
+          <div class="sack layer" style="--depth:-8">
+            <p class="sack-s">Produce of Ethiopia</p>
+            <p class="sack-xl">Kaffa</p>
+            <p class="sack-m">Coffee Market</p>
+            <span class="sack-rule"></span>
+            <p class="sack-s">Arabica · Grade 1 · Washed</p>
+            <p class="sack-ico">010 / 0274 / 0031</p>
+            <p class="sack-s">Net 60 kg</p>
+          </div>
+
+          <svg class="seal layer" style="--depth:18" viewBox="0 0 140 140" aria-hidden="true">
+            <circle class="seal-disc" cx="70" cy="70" r="70"/>
+            <defs><path id="seal-path" d="M70 70m-54 0a54 54 0 1 1 108 0a54 54 0 1 1-108 0"/></defs>
+            <g class="seal-ring">
+              <text class="seal-text"><textPath href="#seal-path" textLength="330">KAFFA COFFEE MARKET · WHERE COFFEE BEGAN ·</textPath></text>
+            </g>
+            <circle class="seal-inner" cx="70" cy="70" r="38"/>
+            <g transform="rotate(28 70 70)">
+              <ellipse class="seal-bean" cx="70" cy="70" rx="15" ry="23"/>
+              <path class="seal-crease" d="M70 49C61 62 79 78 70 91"/>
+            </g>
+          </svg>
+
+          <svg class="cup layer" style="--depth:14" viewBox="0 0 200 190" aria-hidden="true">
+            <path class="steam" style="--s:0" d="M74 62q-10-13 0-26q10-13 0-26"/>
+            <path class="steam" style="--s:1" d="M100 58q-10-13 0-26q10-13 0-26"/>
+            <path class="steam" style="--s:2" d="M126 62q-10-13 0-26q10-13 0-26"/>
+            <ellipse cx="100" cy="166" rx="84" ry="15" fill="#D9C4A0"/>
+            <ellipse cx="100" cy="163" rx="66" ry="10" fill="#F6EBD6"/>
+            <path d="M158 100c30-6 34 34-10 38" fill="none" stroke="#F6EBD6" stroke-width="11" stroke-linecap="round"/>
+            <path d="M40 88H160C160 132 140 160 100 160C60 160 40 132 40 88Z" fill="#F6EBD6"/>
+            <ellipse cx="100" cy="88" rx="60" ry="13" fill="#FFF8EA"/>
+            <ellipse cx="100" cy="89" rx="52" ry="9.5" fill="#3A2114"/>
+            <ellipse cx="88" cy="87" rx="20" ry="3" fill="#7A4A2A"/>
+            <g transform="rotate(28 100 126)"><ellipse cx="100" cy="126" rx="9" ry="14" fill="#B4281F"/><path d="M100 114C95 122 105 130 100 138" fill="none" stroke="#F6EBD6" stroke-width="2.2" stroke-linecap="round"/></g>
+          </svg>
+
+          <span class="bean layer" style="--depth:30; --x:-6%; --y:12%; --r:20deg; --t:6s"></span>
+          <span class="bean layer" style="--depth:22; --x:-9%; --y:62%; --r:-35deg; --t:7.5s"></span>
+          <span class="bean layer" style="--depth:34; --x:96%; --y:44%; --r:70deg; --t:5.5s"></span>
+          <span class="bean layer" style="--depth:26; --x:38%; --y:-9%; --r:110deg; --t:8s"></span>
+          <span class="bean layer" style="--depth:20; --x:20%; --y:101%; --r:-10deg; --t:6.5s"></span>
+        </div>
+        <figcaption>Every export sack carries a three-part mark: country, exporter, lot. 010 is Ethiopia's code. A full sack weighs 60 kg, enough for 240 of our 250 g bags before roasting.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Brand promises -->
+  <section class="promises">
+    <ul class="wrap promise-grid">
+      <li data-reveal style="--d:0">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><g transform="rotate(28 24 24)"><ellipse cx="24" cy="24" rx="12" ry="18"/><path d="M24 8C17 18 31 30 24 40"/></g></svg>
+        <div><strong>Grade 1 and 2 only</strong><span class="muted">Every lot is cupped before we buy it.</span></div>
+      </li>
+      <li data-reveal style="--d:1">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4c2 9 12 13 12 24a12 12 0 0 1-24 0c0-6 4-9 5-14c3 3 5 5 5 9c2-4 3-11 2-19z"/></svg>
+        <div><strong>Roasted twice a week</strong><span class="muted">Tuesday and Friday, in 12 kg batches.</span></div>
+      </li>
+      <li data-reveal style="--d:2">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 15l18-9 18 9v18l-18 9-18-9z"/><path d="M6 15l18 9 18-9M24 24v18M15 10.500l18 9"/></svg>
+        <div><strong>Posted within 24 hours</strong><span class="muted">The roast date is printed on every bag.</span></div>
+      </li>
+      <li data-reveal style="--d:3">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40C8 20 20 8 42 6C42 28 30 40 8 40z"/><path d="M8 40L30 18"/></svg>
+        <div><strong>Forest and smallholder lots</strong><span class="muted">Bought in small volumes, named by place.</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Shop -->
+  <section class="section" id="shop">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="mono muted">This week's lots</p>
+        <h2 class="display">The market table</h2>
+        <p>Every bag lists where the coffee grew, how it was processed and how it scored on the 100-point cupping scale. Whole bean, roasted on the next roast day after you order.</p>
+      </div>
+
+      <div class="toolbar" data-reveal>
+        <div class="chips" role="group" aria-label="Filter lots by type" id="chips">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">All lots</button>
+          <button class="chip" type="button" data-filter="single" aria-pressed="false">Single origin</button>
+          <button class="chip" type="button" data-filter="blend" aria-pressed="false">Blends</button>
+          <button class="chip" type="button" data-filter="decaf" aria-pressed="false">Decaf</button>
+        </div>
+        <label class="sr-only" for="lot-search">Search lots</label>
+        <input class="field" id="lot-search" type="search" placeholder="Search notes, region…" autocomplete="off">
+        <label class="sr-only" for="lot-sort">Sort lots</label>
+        <select class="field" id="lot-sort">
+          <option value="featured">Sort: featured</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+          <option value="score">Cup score: highest</option>
+          <option value="roast">Roast: lightest first</option>
+        </select>
+      </div>
+      <p class="result-count mono" id="result-count" aria-live="polite"></p>
+      <div class="lots" id="lots"></div>
+    </div>
+  </section>
+
+  <!-- Origin -->
+  <section class="section section-alt" id="origin">
+    <div class="wrap origin-grid">
+      <div class="origin-main">
+        <figure class="origin-fig" data-reveal>
+          <img src="images/kaffa-forest.svg" alt="Illustration of the Kaffa highlands: forested hills, two round huts, rows of coffee shrubs and a branch of ripe coffee cherries." width="800" height="520" loading="lazy">
+        </figure>
+        <div class="origin-text" data-reveal>
+          <p class="mono muted">Origin</p>
+          <h2 class="display">Kaffa gave coffee its name</h2>
+          <p>Kaffa is a highland region around the town of Bonga. Coffea arabica still grows wild there under the forest canopy, and local families have picked it for centuries. In 2010 UNESCO listed the Kafa forest as a biosphere reserve to protect those wild trees.</p>
+          <p>Our stall is named for that place. About a third of what we sell comes from Kaffa itself. The rest comes from Yirgacheffe, Guji, Sidama, Limu and Harrar, each with its own character in the cup.</p>
+          <p>Ethiopian coffee is graded 1 to 5 by defect count and cup quality. We buy Grade 1 and Grade 2 only.</p>
+        </div>
+      </div>
+      <div class="origin-side">
+        <p class="mono muted">From tree to your door</p>
+        <ol class="steps" id="steps">
+          <li data-reveal><h3>Picked by hand</h3><p>The main harvest runs from October to January. Pickers take only red, ripe cherries and return to each tree several times.</p></li>
+          <li data-reveal><h3>Washed or sun-dried</h3><p>Washed lots are pulped and fermented in water. Natural lots dry whole on raised beds for two to four weeks.</p></li>
+          <li data-reveal><h3>Milled and graded</h3><p>The dry husk comes off, beans are sorted by size and density, and each lot is cupped and graded.</p></li>
+          <li data-reveal><h3>Roasted in small batches</h3><p>We roast on Tuesday and Friday, in batches of 12 kg, and print the roast date on every bag.</p></li>
+          <li data-reveal><h3>Posted the next morning</h3><p>Bags leave within 24 hours of roasting. Most coffees taste best 7 to 30 days after the roast date.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brew guide -->
+  <section class="section" id="brew">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="mono muted">Brew guide</p>
+        <h2 class="display">Weigh it, don't guess</h2>
+        <p>Pick a method and how many you're serving. The recipe gives you the dose, the water and a timer.</p>
+      </div>
+      <div class="brew">
+        <div class="brew-controls" data-reveal>
+          <fieldset>
+            <legend>Method</legend>
+            <div class="methods" id="methods"></div>
+          </fieldset>
+          <div>
+            <label class="label" for="brew-servings" id="servings-label">Servings</label>
+            <div class="servings-row">
+              <input id="brew-servings" type="range" min="1" max="6" step="1" value="2">
+              <output class="servings-val" id="servings-val" for="brew-servings">2</output>
+            </div>
+          </div>
+          <p class="muted" id="brew-pair"></p>
+        </div>
+
+        <div class="recipe" id="recipe" data-reveal style="--d:1">
+          <div class="recipe-top">
+            <img class="recipe-img" id="brew-img" src="images/brew/pourover.svg" alt="" width="240" height="240">
+            <div class="recipe-main">
+              <div class="recipe-head">
+                <h3 class="display" id="brew-name">Pour-over</h3>
+                <span class="mono muted" id="brew-ratio">Ratio 1 : 16</span>
+              </div>
+              <div class="doses">
+                <div><div class="mono muted">Coffee</div><div class="dose-num"><span id="dose-coffee">31</span><small>g</small></div></div>
+                <div><div class="mono muted" id="dose-water-label">Water</div><div class="dose-num"><span id="dose-water">500</span><small id="dose-water-unit">ml</small></div></div>
+              </div>
+            </div>
+          </div>
+          <dl class="recipe-specs">
+            <div><dt class="mono">Grind</dt><dd id="brew-grind">Medium-fine, like table salt</dd></div>
+            <div><dt class="mono">Water temp</dt><dd id="brew-temp">94 °C</dd></div>
+            <div><dt class="mono">Brew time</dt><dd id="brew-time">3:00</dd></div>
+          </dl>
+          <div class="recipe-bottom">
+            <ol class="recipe-steps" id="brew-steps"></ol>
+            <div class="timer" id="timer">
+              <div class="timer-dial">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <circle class="ring-track" cx="60" cy="60" r="52"/>
+                  <circle class="ring-fill" id="timer-ring" cx="60" cy="60" r="52" transform="rotate(-90 60 60)"/>
+                </svg>
+                <output class="timer-time" id="timer-time" aria-label="Time left">3:00</output>
+              </div>
+              <div class="timer-btns">
+                <button class="btn btn-primary" type="button" id="timer-toggle">Start timer</button>
+                <button class="btn" type="button" id="timer-reset">Reset</button>
+              </div>
+            </div>
+          </div>
+          <p class="sr-only" id="brew-summary" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit -->
+  <section class="section section-alt" id="visit">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="mono muted">Visit</p>
+        <h2 class="display">Find the stall</h2>
+      </div>
+      <div class="visit-grid">
+        <div data-reveal style="--d:0">
+          <h3>Where</h3>
+          <p>Stall 7, Old Market Hall<br>Walk in through the east gate and follow the smell.</p>
+        </div>
+        <div data-reveal style="--d:1">
+          <h3>Opening hours</h3>
+          <dl class="hours">
+            <dt>Tue to Sat</dt><dd>8:00 – 18:00</dd>
+            <dt>Sunday</dt><dd>9:00 – 14:00</dd>
+            <dt>Monday</dt><dd>Closed</dd>
+          </dl>
+        </div>
+        <div data-reveal style="--d:2">
+          <h3>Write to us</h3>
+          <div class="email-row">
+            <span class="email" id="email">hello@kaffa-coffee.example</span>
+            <button class="btn btn-small" type="button" id="copy-email">Copy</button>
+          </div>
+          <p class="muted">Wholesale and office orders welcome.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-foot band">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <img src="images/logo.svg" alt="" width="64" height="64">
+      <div>
+        <p class="foot-word display">Kaffa</p>
+        <p class="mono muted">Coffee Market · Where coffee began</p>
+      </div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="#shop">Shop</a><a href="#origin">Origin</a><a href="#brew">Brew guide</a><a href="#visit">Visit</a>
+    </nav>
+    <p class="foot-note muted">© 2026 Kaffa Coffee Market. Whole bean only. We grind at the stall on request.</p>
+  </div>
+</footer>
+
+<!-- Bag drawer -->
+<dialog class="cart" id="cart" aria-labelledby="cart-title">
+  <div class="cart-inner">
+    <div class="cart-head">
+      <h2 class="display" id="cart-title">Your bag</h2>
+      <button class="btn btn-small" type="button" id="bag-close">Close</button>
+    </div>
+    <div class="cart-lines" id="cart-lines"></div>
+    <div class="cart-foot" id="cart-foot"></div>
+  </div>
+</dialog>
+
+<div class="toast band" id="toast" role="status" hidden>
+  <span id="toast-msg"></span>
+  <button class="link-btn" type="button" id="toast-view">View bag</button>
+</div>
+
+<script src="script.js"></script>
+
+</body></html>

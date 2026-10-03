@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Bag of Market Blend No. 1 coffee">
+<rect width="400" height="300" fill="#EDD6C2"/>
+<circle cx="200" cy="148" r="118" fill="#DFBA9C"/>
+<ellipse cx="200" cy="266" rx="104" ry="11" fill="#2B1A12" opacity=".2"/>
+<path d="M130 82H270L282 258Q282 264 276 264H124Q118 264 118 258Z" fill="#C9A26B"/>
+<path d="M250 82H270L282 258Q282 264 276 264H260Z" fill="#B48B55"/>
+<path d="M130 82H150L138 264H124Q118 264 118 258Z" fill="#D6B37F"/>
+<rect x="126" y="56" width="148" height="28" rx="3" fill="#B48B55"/>
+<rect x="116" y="65" width="168" height="9" rx="4.5" fill="#2B1A12"/>
+<circle cx="200" cy="101" r="5" fill="#B48B55"/><circle cx="200" cy="101" r="2" fill="#2B1A12" opacity=".5"/>
+<rect x="146" y="116" width="108" height="118" fill="#8A4B2A"/>
+<rect x="152" y="122" width="96" height="106" fill="none" stroke="#F6EBD6" stroke-width="1.5" stroke-dasharray="7 3"/>
+<g transform="rotate(28 200.0 146.0)"><ellipse cx="200.0" cy="146.0" rx="8.6" ry="13.0" fill="#F6EBD6"/><path d="M200.0 134.3C194.8 142.1 205.2 149.9 200.0 157.7" fill="none" stroke="#8A4B2A" stroke-width="2.1" stroke-linecap="round"/></g>
+<g fill="#F6EBD6" font-family="'Courier New', Courier, monospace" text-anchor="middle"><text x="200" y="176" font-size="12.0" font-weight="700" letter-spacing="1">MARKET BLEND</text><text x="200" y="192" font-size="12.0" font-weight="700" letter-spacing="1">NO. 1</text>
+<text x="200" y="208" font-size="9.5" letter-spacing="1.5">HOUSE BLEND</text>
+<text x="200" y="222" font-size="8" letter-spacing="2" opacity=".8">250 G · WHOLE BEAN</text></g>
+<g transform="rotate(155 74.7 249.2)"><ellipse cx="74.7" cy="249.2" rx="8.4" ry="12.8" fill="#4E2D18"/><path d="M74.7 237.7C69.6 245.4 79.8 253.0 74.7 260.7" fill="none" stroke="#1C0F08" stroke-width="2.0" stroke-linecap="round"/></g><g transform="rotate(170 94.7 262.1)"><ellipse cx="94.7" cy="262.1" rx="8.4" ry="12.8" fill="#4E2D18"/><path d="M94.7 250.6C89.6 258.3 99.8 266.0 94.7 273.6" fill="none" stroke="#1C0F08" stroke-width="2.0" stroke-linecap="round"/></g><g transform="rotate(149 46.4 264.6)"><ellipse cx="46.4" cy="264.6" rx="7.9" ry="12.0" fill="#4E2D18"/><path d="M46.4 253.8C41.6 261.0 51.2 268.1 46.4 275.3" fill="none" stroke="#1C0F08" stroke-width="1.9" stroke-linecap="round"/></g><g transform="rotate(95 310.1 255.1)"><ellipse cx="310.1" cy="255.1" rx="9.1" ry="13.8" fill="#4E2D18"/><path d="M310.1 242.7C304.6 251.0 315.6 259.2 310.1 267.5" fill="none" stroke="#1C0F08" stroke-width="2.2" stroke-linecap="round"/></g><g transform="rotate(175 339.6 251.5)"><ellipse cx="339.6" cy="251.5" rx="7.4" ry="11.3" fill="#4E2D18"/><path d="M339.6 241.3C335.1 248.1 344.1 254.9 339.6 261.6" fill="none" stroke="#1C0F08" stroke-width="1.8" stroke-linecap="round"/></g><g transform="rotate(13 345.7 267.2)"><ellipse cx="345.7" cy="267.2" rx="8.2" ry="12.4" fill="#4E2D18"/><path d="M345.7 256.1C340.8 263.5 350.7 271.0 345.7 278.4" fill="none" stroke="#1C0F08" stroke-width="2.0" stroke-linecap="round"/></g><g transform="rotate(41 293.0 272.4)"><ellipse cx="293.0" cy="272.4" rx="7.5" ry="11.3" fill="#4E2D18"/><path d="M293.0 262.2C288.5 269.0 297.5 275.8 293.0 282.6" fill="none" stroke="#1C0F08" stroke-width="1.8" stroke-linecap="round"/></g>
+</svg>

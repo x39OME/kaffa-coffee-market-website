@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Bag of Jebena Dark coffee">
+<rect width="400" height="300" fill="#D5E3D3"/>
+<circle cx="200" cy="148" r="118" fill="#B6CEB7"/>
+<ellipse cx="200" cy="266" rx="104" ry="11" fill="#2B1A12" opacity=".2"/>
+<path d="M130 82H270L282 258Q282 264 276 264H124Q118 264 118 258Z" fill="#C9A26B"/>
+<path d="M250 82H270L282 258Q282 264 276 264H260Z" fill="#B48B55"/>
+<path d="M130 82H150L138 264H124Q118 264 118 258Z" fill="#D6B37F"/>
+<rect x="126" y="56" width="148" height="28" rx="3" fill="#B48B55"/>
+<rect x="116" y="65" width="168" height="9" rx="4.5" fill="#2B1A12"/>
+<circle cx="200" cy="101" r="5" fill="#B48B55"/><circle cx="200" cy="101" r="2" fill="#2B1A12" opacity=".5"/>
+<rect x="146" y="116" width="108" height="118" fill="#23513A"/>
+<rect x="152" y="122" width="96" height="106" fill="none" stroke="#F6EBD6" stroke-width="1.5" stroke-dasharray="7 3"/>
+<g transform="rotate(28 200.0 146.0)"><ellipse cx="200.0" cy="146.0" rx="8.6" ry="13.0" fill="#F6EBD6"/><path d="M200.0 134.3C194.8 142.1 205.2 149.9 200.0 157.7" fill="none" stroke="#23513A" stroke-width="2.1" stroke-linecap="round"/></g>
+<g fill="#F6EBD6" font-family="'Courier New', Courier, monospace" text-anchor="middle"><text x="200" y="184" font-size="13.1" font-weight="700" letter-spacing="1">JEBENA DARK</text>
+<text x="200" y="208" font-size="9.5" letter-spacing="1.5">HOUSE BLEND</text>
+<text x="200" y="222" font-size="8" letter-spacing="2" opacity=".8">250 G · WHOLE BEAN</text></g>
+<g transform="rotate(62 68.2 249.4)"><ellipse cx="68.2" cy="249.4" rx="8.2" ry="12.4" fill="#2E1A0F"/><path d="M68.2 238.3C63.3 245.7 73.2 253.1 68.2 260.6" fill="none" stroke="#6F4324" stroke-width="2.0" stroke-linecap="round"/></g><g transform="rotate(75 98.1 261.1)"><ellipse cx="98.1" cy="261.1" rx="7.3" ry="11.1" fill="#2E1A0F"/><path d="M98.1 251.1C93.7 257.8 102.6 264.5 98.1 271.1" fill="none" stroke="#6F4324" stroke-width="1.8" stroke-linecap="round"/></g><g transform="rotate(174 46.3 264.8)"><ellipse cx="46.3" cy="264.8" rx="7.8" ry="11.8" fill="#2E1A0F"/><path d="M46.3 254.2C41.6 261.3 51.0 268.4 46.3 275.4" fill="none" stroke="#6F4324" stroke-width="1.9" stroke-linecap="round"/></g><g transform="rotate(162 305.8 258.4)"><ellipse cx="305.8" cy="258.4" rx="9.1" ry="13.8" fill="#2E1A0F"/><path d="M305.8 246.0C300.3 254.2 311.3 262.5 305.8 270.8" fill="none" stroke="#6F4324" stroke-width="2.2" stroke-linecap="round"/></g><g transform="rotate(65 334.8 245.8)"><ellipse cx="334.8" cy="245.8" rx="8.3" ry="12.6" fill="#2E1A0F"/><path d="M334.8 234.5C329.8 242.1 339.8 249.6 334.8 257.2" fill="none" stroke="#6F4324" stroke-width="2.0" stroke-linecap="round"/></g><g transform="rotate(124 351.5 266.3)"><ellipse cx="351.5" cy="266.3" rx="8.0" ry="12.1" fill="#2E1A0F"/><path d="M351.5 255.4C346.6 262.6 356.3 269.9 351.5 277.2" fill="none" stroke="#6F4324" stroke-width="1.9" stroke-linecap="round"/></g><g transform="rotate(43 291.2 272.5)"><ellipse cx="291.2" cy="272.5" rx="8.8" ry="13.3" fill="#2E1A0F"/><path d="M291.2 260.5C285.9 268.5 296.5 276.4 291.2 284.4" fill="none" stroke="#6F4324" stroke-width="2.1" stroke-linecap="round"/></g>
+</svg>
